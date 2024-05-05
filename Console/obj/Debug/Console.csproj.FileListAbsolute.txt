@@ -1,0 +1,11 @@
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Console\bin\Debug\Console.exe
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Console\bin\Debug\Console.pdb
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Console\bin\Debug\BLL.dll
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Console\bin\Debug\Entities.dll
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Console\bin\Debug\BLL.pdb
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Console\bin\Debug\Entities.pdb
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Console\obj\Debug\Console.csproj.AssemblyReference.cache
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Console\obj\Debug\Console.csproj.CoreCompileInputs.cache
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Console\obj\Debug\Console.csproj.Up2Date
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Console\obj\Debug\Console.exe
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Console\obj\Debug\Console.pdb
