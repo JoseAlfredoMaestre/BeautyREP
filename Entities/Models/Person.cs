@@ -39,8 +39,8 @@ public abstract class Person
     public string? Surnames { get; set; }
     public string Phone { get; set; }
     public string Email { get; set; }
-    private string? Username { get; }
-    private string? Password { get; }
+    public string? Username { get; }
+    public string? Password { get; }
     public DateTime CreateAt { get; set; }
     public string? Role { get; protected set; }
 
