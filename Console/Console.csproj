@@ -48,9 +48,17 @@
         <Project>{54f57dcb-f50b-4be0-b0c6-71161bc89056}</Project>
         <Name>BLL</Name>
       </ProjectReference>
+      <ProjectReference Include="..\DAL\DAL.csproj">
+        <Project>{4d4aa9fc-71fa-474a-bb93-10029790066c}</Project>
+        <Name>DAL</Name>
+      </ProjectReference>
       <ProjectReference Include="..\Entities\Entities.csproj">
         <Project>{de8e6589-4fd4-4d2b-9657-a302d50a5473}</Project>
         <Name>Entities</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\GUI\GUI.csproj">
+        <Project>{3eb03e40-5ad9-4952-ba80-f28f22a074ac}</Project>
+        <Name>GUI</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>

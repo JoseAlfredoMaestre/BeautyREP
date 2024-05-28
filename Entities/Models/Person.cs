@@ -5,10 +5,11 @@ namespace Entities.Models;
 public abstract class Person
 {
 
-    public Person(long id, string names, string? surnames, string phone, string email, string? username,
+    public Person(long id, string identityCard, string names, string surnames, string phone, string email, string? username,
         string? password, DateTime createAt)
     {
         Id = id;
+        IdentityCard = identityCard;
         Names = names;
         Surnames = surnames;
         Phone = phone;
@@ -18,9 +19,10 @@ public abstract class Person
         CreateAt = createAt;
     }
 
-    public Person(string names, string? surnames, string phone, string email, string? username, string? password)
+    public Person( string identityCard, string names, string surnames, string phone, string email, string? username, string? password)
     {
         Names = names;
+        IdentityCard = identityCard;
         Surnames = surnames;
         Phone = phone;
         Email = email;
@@ -35,12 +37,13 @@ public abstract class Person
 
 
     public long Id { get; set; }
+    public string IdentityCard { get; set; }
     public string Names { get; set; }
-    public string? Surnames { get; set; }
+    public string Surnames { get; set; }
     public string Phone { get; set; }
     public string Email { get; set; }
-    public string? Username { get; }
-    public string? Password { get; }
+    public string? Username { get; set; }
+    public string? Password { get; set; }
     public DateTime CreateAt { get; set; }
     public string? Role { get; protected set; }
 

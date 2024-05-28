@@ -14,8 +14,10 @@ public class Sale : IReadEntity, ICreateEntity, IDeleteEntity
     public int Discount { get; set; }
     public DateTime CreateAt { get; set; }
 
+    public SaleStatus Status { get; set; }
+
     public HashSet<SaleDetail> SaleDetails { get; set; }
-    public SaleUbication Ubication { get; set; }
+    public SaleLocation Location { get; set; }
 
 
     public Sale()
@@ -23,7 +25,7 @@ public class Sale : IReadEntity, ICreateEntity, IDeleteEntity
         Discount = 0;
         SaleDetails = new();
         CreateAt = DateTime.Now;
-        Ubication = new();
+        Location = new();
     }
 
     public Sale(int discount)
@@ -31,7 +33,7 @@ public class Sale : IReadEntity, ICreateEntity, IDeleteEntity
         Discount = discount;
         SaleDetails = new();
         CreateAt = DateTime.Now;
-        Ubication = new();
+        Location = new();
     }
 
     public Sale(int discount, HashSet<SaleDetail> saleDetails)
@@ -39,15 +41,16 @@ public class Sale : IReadEntity, ICreateEntity, IDeleteEntity
         Discount = discount;
         SaleDetails = saleDetails;
         CreateAt = DateTime.Now;
-        Ubication = new();
+        Location = new();
     }
 
-    public Sale(long id, int discount, DateTime createAt, HashSet<SaleDetail> saleDetails, SaleUbication ubication)
+    public Sale(long id, int discount, DateTime createAt, SaleStatus status, HashSet<SaleDetail> saleDetails, SaleLocation location)
     {
         Id = id;
         Discount = discount;
         CreateAt = createAt;
+        Status = status;
         SaleDetails = saleDetails;
-        Ubication = ubication;
+        Location = location;
     }
 }

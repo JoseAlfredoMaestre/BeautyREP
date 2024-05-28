@@ -38,7 +38,7 @@ namespace GUI.Forms.Users
 
             var lastUser = UserService.GetInstance().GetAll().Data.LastOrDefault();
             int newId = (int)((lastUser != null) ? lastUser.Id + 1 : 1);
-            var user = new User(newId, names, surnames, phone, email, username, password, DateTime.Now); UserService.GetInstance().Save(user);
+            var user = new User(newId.ToString(), names, surnames, phone, email, username, password); UserService.GetInstance().Save(user);
 
             this.Dispose();
             UserCreated?.Invoke();

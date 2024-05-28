@@ -8,7 +8,7 @@ public class Product : ICrudEntity
     public int Stock = 0;
     public long Id { get; set; }
     public string Name { get; set; }
-    public string? Desc { get; set; }
+    public string? Description { get; set; }
     public double UnitPrice { get; set; }
     public int Discount { get; set; } = 0;
     public double TotalPrice => UnitPrice - UnitPrice * Discount;
@@ -19,23 +19,23 @@ public class Product : ICrudEntity
 
     }
 
-    public Product(long id, string name, string? desc, double unitPrice,int stock, int discount)
+    public Product(long id, string name, string? description, double unitPrice,int stock, int discount)
     {
         Stock = stock;
         Id = id;
         Name = name;
-        Desc = desc;
+        Description = description;
         UnitPrice = unitPrice;
         Discount = discount;
         CreateAt = DateTime.Now;
     }
 
-    public Product(long id, string name, string? desc, double unitPrice,int stock, int discount, DateTime createAt)
+    public Product(long id, string name, string? description, double unitPrice,int stock, int discount, DateTime createAt)
     {
         Stock = stock;
         Id = id;
         Name = name;
-        Desc = desc;
+        Description = description;
         UnitPrice = unitPrice;
         Discount = discount;
         CreateAt = createAt;

@@ -8,29 +8,29 @@ namespace BLL.Services;
 public class SaleUbicationService
 {
     private static SaleUbicationService? _instance;
-    public static SaleUbicationService GetInstance() { return _instance ??= new SaleUbicationService(new HashSet<SaleUbication>()); }
-    private SaleUbicationService(HashSet<SaleUbication> repository)
+    public static SaleUbicationService GetInstance() { return _instance ??= new SaleUbicationService(new HashSet<SaleLocation>()); }
+    private SaleUbicationService(HashSet<SaleLocation> repository)
     {
         _repository = repository;
     }
 
-    private HashSet<SaleUbication> _repository;
+    private HashSet<SaleLocation> _repository;
 
-    public Response<SaleUbication> Save(params SaleUbication[] entity)
+    public Response<SaleLocation> Save(params SaleLocation[] entity)
     {
-        var service = CreateService<SaleUbication>.GetInstance().withRepository(_repository);
+        var service = CreateService<SaleLocation>.GetInstance().withRepository(_repository);
         return service.Save(entity);
     }
 
-    public Response<HashSet<SaleUbication>> GetAll()
+    public Response<HashSet<SaleLocation>> GetAll()
     {
-        var service = ReadService<SaleUbication>.GetInstance().withRepository(_repository);
+        var service = ReadService<SaleLocation>.GetInstance().withRepository(_repository);
         return service.GetAll();
     }
 
-    public Response<SaleUbication> GetById(long id)
+    public Response<SaleLocation> GetById(long id)
     {
-        var service = ReadService<SaleUbication>.GetInstance().withRepository(_repository);
+        var service = ReadService<SaleLocation>.GetInstance().withRepository(_repository);
         return service.GetById(id);
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using BLL.Services;
+using DAL.Connection;
+using DAL.Repositories;
 using Entities.Models;
 
 namespace GUI
@@ -8,26 +10,28 @@ namespace GUI
     {
         public static void Main(string[] args)
         {
-            var user = new User(1, "aisaac", "asd", "123123", "email.com", "aisaac", "1234", DateTime.Now);
-            var user2 = new User(2, "aisaacInsano", "asd", "123123", "email.com", "aisaac", "1234", DateTime.Now);
-            var user4 = new User(2, "aisaacInsano", "asd", "123123", "email.com", "aisaac", "1234", DateTime.Now);
+            var conexion = new DatabaseConnection();
+            var res = conexion.OpenConnection();
+            Console.WriteLine(res.IsSuccess + res.Msg);
+            User newUser = new User();
+            newUser.IdentityCard = "1067591313";
+            newUser.Names = "Nombre de prueba";
+            newUser.Surnames = "Apellido de prueba";
+            newUser.Phone = "1234567890";
+            newUser.Email = "prueba@ejemplo.com";
+            newUser.Username = "prueba123";
+            newUser.Password = "password123";
+            newUser.CreateAt = DateTime.Now;
 
-            Console.WriteLine(UserService.GetInstance().Save(user));
-            Console.WriteLine(UserService.GetInstance().Save(user2));
+            UserRepository userRepository = new UserRepository();
 
-            foreach (var item in UserService.GetInstance().GetAll().Data)
+            //Console.WriteLine(userRepository.Insert(newUser).Msg);
+
+            foreach (var user in userRepository.GetAll().Data)
             {
-                Console.WriteLine(item.Id + item.Names + item.CreateAt);
+                Console.WriteLine(user.Names);
             }
-            Console.WriteLine();
-            var user3 = new User(3, "aisaacInsano43", "asd", "123123", "email.com", "aisaac", "1234", DateTime.Now);
-            UserService.GetInstance().Save(user, user2, user3, user4);
-
-            foreach (var item in UserService.GetInstance().GetAll().Data)
-            {
-                Console.WriteLine(item.Id + item.Names + item.CreateAt);
-            }
-            Console.ReadLine();
+            Console.ReadKey();
         }
     }
 }
