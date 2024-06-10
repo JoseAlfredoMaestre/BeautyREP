@@ -1,22 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin;
-using MaterialSkin.Controls;
 using BLL.Services;
 using Entities.Models;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
-namespace GUI.Forms.Users
+namespace GUI.Forms.admins.Users
 {
     public partial class CreateUser : MaterialForm
     {
         public event Action UserCreated;
+
         public CreateUser()
         {
             InitializeComponent();
@@ -24,7 +21,8 @@ namespace GUI.Forms.Users
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900,
+                Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
 
         private void createUserButton_Click(object sender, EventArgs e)
@@ -39,10 +37,40 @@ namespace GUI.Forms.Users
 
             var lastUser = UserService.GetInstance().GetAll().Data.LastOrDefault();
             int newId = (int)((lastUser != null) ? lastUser.Id + 1 : 1);
-            var user = new User(cedula, names, surnames, phone, email, username, password); UserService.GetInstance().Save(user);
+            User user = new User
+            {
+                IdentityCard = cedula,
+                Names = names,
+                Surnames = surnames,
+                Phone = phone,
+                Email = email,
+                Username = username,
+                Password = password,
+                CreateAt = DateTime.Now
+            };
+            if (user != null)
+            {
+                ValidationContext context = new(user, null, null);
 
-            this.Dispose();
-            UserCreated?.Invoke();
+                IList<ValidationResult> errors = new List<ValidationResult>();
+
+                if (!Validator.TryValidateObject(user, context, errors, true))
+                {
+                    foreach (ValidationResult result in errors)
+                    {
+                        Console.WriteLine((result.ErrorMessage));
+                        MessageBox.Show(result.ErrorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else
+                {
+                    // Solo guarda el usuario si todas las validaciones pasaron correctamente
+                    UserService.GetInstance().Save(user);
+                    this.Dispose();
+                    UserCreated?.Invoke();
+                }
+            }
         }
     }
 }

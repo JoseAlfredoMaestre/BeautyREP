@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
-using GUI.Forms;
+using GUI.Config.Theme;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using BLL.Services;
 using Entities.Models;
 using Entities.Shared;
+using GUI.Forms.admins;
 using GUI.Forms.Users;
 
 namespace GUI
@@ -17,12 +18,7 @@ namespace GUI
         public Login()
         {
             InitializeComponent();
-
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900,
-                Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            ThemeManager.ConfigureTheme(this);
         }
 
         private void loginButton_Click(object sender, EventArgs e)

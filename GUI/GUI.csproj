@@ -38,7 +38,12 @@
     <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.2.2.3.1\lib\net461\MaterialSkin.dll</HintPath>
     </Reference>
+    <Reference Include="mscorlib" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
@@ -52,11 +57,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\Theme\ThemeManager.cs" />
+    <Compile Include="Forms\admins\Cities\CreateCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\admins\Cities\CreateCity.Designer.cs">
+      <DependentUpon>CreateCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\admins\Cities\DeleteCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\admins\Cities\DeleteCity.Designer.cs">
+      <DependentUpon>DeleteCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\admins\Cities\UpdateCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\admins\Cities\UpdateCity.Designer.cs">
+      <DependentUpon>UpdateCity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\admins\Home.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\admins\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\admins\Products\CreateProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\admins\Products\CreateProduct.Designer.cs">
+      <DependentUpon>CreateProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\admins\Products\DeleteProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\admins\Products\DeleteProduct.Designer.cs">
+      <DependentUpon>DeleteProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\admins\Products\UpdateProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\admins\Products\UpdateProduct.Designer.cs">
+      <DependentUpon>UpdateProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\admins\Users\CreateUser.cs" />
     <Compile Include="Forms\admins\Users\CreateUser.Designer.cs">
@@ -84,8 +126,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\admins\Cities\CreateCity.resx">
+      <DependentUpon>CreateCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\admins\Cities\DeleteCity.resx">
+      <DependentUpon>DeleteCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\admins\Cities\UpdateCity.resx">
+      <DependentUpon>UpdateCity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\admins\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\admins\Products\CreateProduct.resx">
+      <DependentUpon>CreateProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\admins\Products\DeleteProduct.resx">
+      <DependentUpon>DeleteProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\admins\Products\UpdateProduct.resx">
+      <DependentUpon>UpdateProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\admins\Users\CreateUser.resx">
       <DependentUpon>CreateUser.cs</DependentUpon>

@@ -1,29 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 using System.Windows.Forms;
-using MaterialSkin;
-using MaterialSkin.Controls;
 using BLL.Services;
 using Entities.Models;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
-namespace GUI.Forms.Users
+namespace GUI.Forms.admins.Users
 {
     public partial class UpdateUser : MaterialForm
     {
-        private User userToUpdate;
+        private User _userToUpdate;
         public event Action UserUpdated;
+
         public UpdateUser(User user)
         {
-            this.userToUpdate = user;
+            this._userToUpdate = user;
             InitializeComponent();
 
             // Poner los valores del usuario en los campos de entrada
+            cedulaInput.Text = user.IdentityCard;
             nameInput.Text = user.Names;
             surnamesInput.Text = user.Surnames;
             phoneInput.Text = user.Phone;
@@ -37,14 +34,38 @@ namespace GUI.Forms.Users
 
         private void updateUserButton_Click(object sender, EventArgs e)
         {
-            userToUpdate.Names = nameInput.Text;
-            userToUpdate.Surnames = surnamesInput.Text;
-            userToUpdate.Phone = phoneInput.Text;
-            userToUpdate.Email = emailInput.Text;
+            _userToUpdate.IdentityCard = cedulaInput.Text;
+            _userToUpdate.Names = nameInput.Text;
+            _userToUpdate.Surnames = surnamesInput.Text;
+            _userToUpdate.Phone = phoneInput.Text;
+            _userToUpdate.Email = emailInput.Text;
+            _userToUpdate.Username = "usuariodeprueba";
+            _userToUpdate.Password = "contraseñadeprueba";
 
-            UserService.GetInstance().Update(userToUpdate);
-            UserUpdated?.Invoke();
-            this.Dispose();
+            if (_userToUpdate != null)
+            {
+                ValidationContext context = new(_userToUpdate, null, null);
+
+                IList<ValidationResult> errors = new List<ValidationResult>();
+
+                if (!Validator.TryValidateObject(_userToUpdate, context, errors, true))
+                {
+                    foreach (ValidationResult result in errors)
+                    {
+                        Console.WriteLine((result.ErrorMessage));
+                        MessageBox.Show(result.ErrorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else
+                {
+                    // Solo guarda el usuario si todas las validaciones pasaron correctamente
+                    UserService.GetInstance().Update(_userToUpdate);
+                    MessageBox.Show("Usuario actualizado correctamente.");
+                    UserUpdated?.Invoke();
+                    this.Dispose();
+                }
+            }
         }
     }
 }

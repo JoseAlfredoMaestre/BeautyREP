@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Entities.Interfaces;
 
 namespace Entities.Models;
@@ -6,8 +7,13 @@ namespace Entities.Models;
 public class City : ICrudEntity
 {
     public long Id { get; set; }
+
+    [Required (ErrorMessage = "El nombre de la ciudad es requerido.")]
     public string Name { get; set; }
+
+    [Required (ErrorMessage = "La descripción de la ciudad es requerida.")]
     public string? Description { get; set; }
+
     public DateTime CreateAt { get; set; }
 
     public City()

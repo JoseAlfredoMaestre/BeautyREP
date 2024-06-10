@@ -37,6 +37,7 @@ namespace GUI.Forms.Users
         {
             UserService.GetInstance().Delete(userToDelete.Id);
             UserDeleted?.Invoke();
+            MessageBox.Show("Usuario eliminado correctamente.");
             this.Dispose();
         }
 

@@ -22,7 +22,7 @@ namespace DAL.Repositories
             {
                 _dbConnection.OpenConnection();
 
-                string query = "INSERT INTO Products (Name, Description, UnitPrice, Stock, Discount, CreateAt) VALUES (@Name, @Description, @UnitPrice, @Stock, @Discount, @CreateAt)";
+                string query = "INSERT INTO Products (Name, Description, UnitPrice, Stock, Discount, Image, CreateAt) VALUES (@Name, @Description, @UnitPrice, @Stock, @Discount, @Image, @CreateAt)";
 
                 using (SqlCommand command = new SqlCommand(query, _dbConnection.GetConnection()))
                 {
@@ -32,6 +32,7 @@ namespace DAL.Repositories
                     command.Parameters.AddWithValue("@Stock", product.Stock);
                     command.Parameters.AddWithValue("@Discount", product.Discount);
                     command.Parameters.AddWithValue("@CreateAt", product.CreateAt);
+                    command.Parameters.AddWithValue("@Image", product.Image);
 
                     command.ExecuteNonQuery();
                 }
@@ -50,7 +51,7 @@ namespace DAL.Repositories
             try
             {
                 _dbConnection.OpenConnection();
-                string query = "SELECT Id, Name, Description, UnitPrice, Stock, Discount, CreateAt FROM Products WHERE Id = @Id";
+                string query = "SELECT Id, Name, Description, UnitPrice, Stock, Discount, CreateAt, Image FROM Products WHERE Id = @Id";
                 using (SqlCommand command = new SqlCommand(query, _dbConnection.GetConnection()))
                 {
                     command.Parameters.AddWithValue("@Id", id);
@@ -66,7 +67,8 @@ namespace DAL.Repositories
                                 reader.GetDouble(3), // UnitPrice
                                 reader.GetInt32(4), // Stock
                                 reader.GetInt32(5), // Discount
-                                reader.GetDateTime(6)  // CreateAt
+                                reader.GetDateTime(6),  // CreateAt
+                                reader.IsDBNull(7) ? null : (byte[])reader[7]
                             );
                             return new ResponseBuilder<Product>().WithData(product);
                         }
@@ -92,7 +94,7 @@ namespace DAL.Repositories
             {
                 _dbConnection.OpenConnection();
 
-                string query = "SELECT Id, Name, Description, UnitPrice, Stock, Discount, CreateAt FROM Products";
+                string query = "SELECT Id, Name, Description, UnitPrice, Stock, Discount, CreateAt, Image FROM Products";
 
                 HashSet<Product> products = new HashSet<Product>();
 
@@ -109,7 +111,8 @@ namespace DAL.Repositories
                                 reader.GetDouble(3), // UnitPrice
                                 reader.GetInt32(4), // Stock
                                 reader.GetInt32(5), // Discount
-                                reader.GetDateTime(6)  // CreateAt
+                                reader.GetDateTime(6),  // CreateAt
+                                reader.IsDBNull(7) ? null : (byte[])reader[7]
                             );
                             products.Add(product);
                         }
@@ -137,7 +140,8 @@ namespace DAL.Repositories
                              UnitPrice = @UnitPrice,
                              Stock = @Stock,
                              Discount = @Discount,
-                             CreateAt = @CreateAt
+                             CreateAt = @CreateAt,
+                             Image = @Image
                          WHERE Id = @Id";
 
                 using (SqlCommand command = new SqlCommand(query, _dbConnection.GetConnection()))
@@ -149,7 +153,7 @@ namespace DAL.Repositories
                     command.Parameters.AddWithValue("@Stock", product.Stock);
                     command.Parameters.AddWithValue("@Discount", product.Discount);
                     command.Parameters.AddWithValue("@CreateAt", product.CreateAt);
-
+                    command.Parameters.AddWithValue("@Image", product.Image);
                     int rowsAffected = command.ExecuteNonQuery();
 
                     if (rowsAffected > 0)

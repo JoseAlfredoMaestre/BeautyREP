@@ -16,3 +16,9 @@ C:\Nathan\UPC\BEAUTY\Entities\bin\Debug\Entities.dll
 C:\Nathan\UPC\BEAUTY\Entities\bin\Debug\Entities.pdb
 C:\Nathan\UPC\BEAUTY\Entities\obj\Debug\Entities.csproj.AssemblyReference.cache
 C:\Nathan\UPC\BEAUTY\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Entities\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Entities\obj\Debug\Entities.csproj.Up2Date
+C:\Nathan\UPC\BEAUTY\Entities\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Nathan\UPC\BEAUTY\Entities\obj\Debug\Entities.csproj.CopyComplete
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\Entities\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\Entities\obj\Debug\Entities.csproj.CopyComplete

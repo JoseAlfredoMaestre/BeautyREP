@@ -1,4 +1,4 @@
-﻿namespace GUI.Forms.Users
+﻿namespace GUI.Forms.admins.Users
 {
     partial class CreateUser
     {

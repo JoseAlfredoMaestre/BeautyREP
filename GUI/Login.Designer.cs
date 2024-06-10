@@ -32,9 +32,9 @@
             this.passwordInput = new MaterialSkin.Controls.MaterialTextBox();
             this.loginButton = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
-            //
+            // 
             // usernameInput
-            //
+            // 
             this.usernameInput.AnimateReadOnly = false;
             this.usernameInput.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.usernameInput.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
@@ -61,9 +61,9 @@
             this.usernameInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.usernameInput.TrailingIcon = null;
             this.usernameInput.UseSystemPasswordChar = false;
-            //
+            // 
             // passwordInput
-            //
+            // 
             this.passwordInput.AnimateReadOnly = false;
             this.passwordInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.passwordInput.Depth = 0;
@@ -80,9 +80,9 @@
             this.passwordInput.TabIndex = 1;
             this.passwordInput.Text = "";
             this.passwordInput.TrailingIcon = null;
-            //
+            // 
             // loginButton
-            //
+            // 
             this.loginButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.loginButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.loginButton.Depth = 0;
@@ -100,9 +100,9 @@
             this.loginButton.UseAccentColor = false;
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
-            //
+            // 
             // Login
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
@@ -110,6 +110,7 @@
             this.Controls.Add(this.passwordInput);
             this.Controls.Add(this.usernameInput);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
