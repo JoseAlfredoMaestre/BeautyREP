@@ -27,7 +27,7 @@ El módulo de Administrador proporciona acceso completo a todas las funcionalida
 1. Clona este repositorio:
 
     ```bash
-    https://github.com/Aisaac123/BEAUTY.git
+    https://github.com/JoseAlfredoMaestre/BeautyREP.git
     ```
 
 2. Abre el proyecto en Visual Studio.
@@ -44,5 +44,5 @@ El módulo de Administrador proporciona acceso completo a todas las funcionalida
 
 ## Autores
 
-- Jose Alfredo Maestre  - [Usuario GitHub](https://github.com/usuario1)
-- Dahiana Torres - [Usuario GitHub](https://github.com/usuario2)
+- Jose Alfredo Maestre  
+- Dahiana Torres 
