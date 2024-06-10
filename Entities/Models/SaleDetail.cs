@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Entities.Interfaces;
 
 namespace Entities.Models;
@@ -6,11 +7,16 @@ namespace Entities.Models;
 public class SaleDetail : IReadEntity, ICreateEntity, IDeleteEntity
 {
     public long Id { get; set; }
+
+    [Required]
     public Product Product { get; set; }
+
+    [Required]
+    [Range(1, int.MaxValue, ErrorMessage = "La cantidad debe ser mayor que 0.")]
     public int Quantity { get; set; }
     public double Subtotal => Product.TotalPrice * Quantity;
 
-    public Sale Sale { get; set; }
+    public Sale Sale { get; set; } = new();
     public DateTime CreateAt { get; set; }
 
 

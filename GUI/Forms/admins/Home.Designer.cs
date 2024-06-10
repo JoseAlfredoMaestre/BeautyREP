@@ -31,6 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.userIconBtn = new System.Windows.Forms.PictureBox();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            this.cleanCartBtn = new MaterialSkin.Controls.MaterialButton();
+            this.createSaleBtn = new MaterialSkin.Controls.MaterialButton();
+            this.saleDetailsListView = new MaterialSkin.Controls.MaterialListView();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.deleteSaleBtn = new MaterialSkin.Controls.MaterialButton();
+            this.createDetailsBtn = new MaterialSkin.Controls.MaterialButton();
+            this.salesListView = new MaterialSkin.Controls.MaterialListView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.actualizarUsuarioBtn = new MaterialSkin.Controls.MaterialButton();
@@ -38,6 +49,7 @@
             this.agregarUsuarioBtn = new MaterialSkin.Controls.MaterialButton();
             this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.actualizarCiudadBtn = new MaterialSkin.Controls.MaterialButton();
             this.eliminarCiudadBtn = new MaterialSkin.Controls.MaterialButton();
             this.agregarCiudadBtn = new MaterialSkin.Controls.MaterialButton();
@@ -50,28 +62,24 @@
             this.eliminarProductoBtn = new MaterialSkin.Controls.MaterialButton();
             this.agregarProductoBtn = new MaterialSkin.Controls.MaterialButton();
             this.productosListView = new MaterialSkin.Controls.MaterialListView();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
-            this.createSaleBtn = new MaterialSkin.Controls.MaterialButton();
-            this.salesListView = new MaterialSkin.Controls.MaterialListView();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabControl1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userIconBtn)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productImgPctrBox)).BeginInit();
-            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
             // 
+            this.materialTabControl1.Controls.Add(this.tabPage4);
             this.materialTabControl1.Controls.Add(this.tabPage1);
             this.materialTabControl1.Controls.Add(this.tabPage2);
             this.materialTabControl1.Controls.Add(this.tabPage3);
-            this.materialTabControl1.Controls.Add(this.tabPage4);
+            this.materialTabControl1.Controls.Add(this.tabPage5);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.ImageList = this.imageList1;
@@ -80,8 +88,201 @@
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1294, 653);
+            this.materialTabControl1.Size = new System.Drawing.Size(1274, 653);
             this.materialTabControl1.TabIndex = 0;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.userIconBtn);
+            this.tabPage4.Controls.Add(this.materialLabel6);
+            this.tabPage4.Controls.Add(this.cleanCartBtn);
+            this.tabPage4.Controls.Add(this.createSaleBtn);
+            this.tabPage4.Controls.Add(this.saleDetailsListView);
+            this.tabPage4.Controls.Add(this.materialLabel3);
+            this.tabPage4.Controls.Add(this.materialButton1);
+            this.tabPage4.Controls.Add(this.deleteSaleBtn);
+            this.tabPage4.Controls.Add(this.createDetailsBtn);
+            this.tabPage4.Controls.Add(this.salesListView);
+            this.tabPage4.ImageKey = "icons8-market-square-50.png";
+            this.tabPage4.Location = new System.Drawing.Point(4, 39);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1266, 610);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Ventas";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // userIconBtn
+            // 
+            this.userIconBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.userIconBtn.Image = ((System.Drawing.Image)(resources.GetObject("userIconBtn.Image")));
+            this.userIconBtn.Location = new System.Drawing.Point(1146, 6);
+            this.userIconBtn.Name = "userIconBtn";
+            this.userIconBtn.Size = new System.Drawing.Size(46, 48);
+            this.userIconBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.userIconBtn.TabIndex = 19;
+            this.userIconBtn.TabStop = false;
+            this.userIconBtn.Click += new System.EventHandler(this.userIconBtn_Click);
+            // 
+            // materialLabel6
+            // 
+            this.materialLabel6.AutoSize = true;
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel6.Location = new System.Drawing.Point(685, 19);
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            this.materialLabel6.Size = new System.Drawing.Size(135, 19);
+            this.materialLabel6.TabIndex = 18;
+            this.materialLabel6.Text = "Carrito de compras";
+            // 
+            // cleanCartBtn
+            // 
+            this.cleanCartBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cleanCartBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.cleanCartBtn.Depth = 0;
+            this.cleanCartBtn.HighEmphasis = true;
+            this.cleanCartBtn.Icon = null;
+            this.cleanCartBtn.Location = new System.Drawing.Point(1049, 556);
+            this.cleanCartBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.cleanCartBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cleanCartBtn.Name = "cleanCartBtn";
+            this.cleanCartBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.cleanCartBtn.Size = new System.Drawing.Size(143, 36);
+            this.cleanCartBtn.TabIndex = 17;
+            this.cleanCartBtn.Text = "Limpiar carrito";
+            this.cleanCartBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.cleanCartBtn.UseAccentColor = false;
+            this.cleanCartBtn.UseVisualStyleBackColor = true;
+            this.cleanCartBtn.Click += new System.EventHandler(this.cleanCartBtn_Click);
+            // 
+            // createSaleBtn
+            // 
+            this.createSaleBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.createSaleBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.createSaleBtn.Depth = 0;
+            this.createSaleBtn.HighEmphasis = true;
+            this.createSaleBtn.Icon = null;
+            this.createSaleBtn.Location = new System.Drawing.Point(873, 556);
+            this.createSaleBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.createSaleBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.createSaleBtn.Name = "createSaleBtn";
+            this.createSaleBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.createSaleBtn.Size = new System.Drawing.Size(139, 36);
+            this.createSaleBtn.TabIndex = 16;
+            this.createSaleBtn.Text = "Realizar venta";
+            this.createSaleBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.createSaleBtn.UseAccentColor = false;
+            this.createSaleBtn.UseVisualStyleBackColor = true;
+            this.createSaleBtn.Click += new System.EventHandler(this.createSaleBtn_Click);
+            // 
+            // saleDetailsListView
+            // 
+            this.saleDetailsListView.AutoSizeTable = false;
+            this.saleDetailsListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.saleDetailsListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.saleDetailsListView.Depth = 0;
+            this.saleDetailsListView.FullRowSelect = true;
+            this.saleDetailsListView.HideSelection = false;
+            this.saleDetailsListView.Location = new System.Drawing.Point(685, 60);
+            this.saleDetailsListView.MinimumSize = new System.Drawing.Size(200, 100);
+            this.saleDetailsListView.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.saleDetailsListView.MouseState = MaterialSkin.MouseState.OUT;
+            this.saleDetailsListView.Name = "saleDetailsListView";
+            this.saleDetailsListView.OwnerDraw = true;
+            this.saleDetailsListView.Size = new System.Drawing.Size(507, 474);
+            this.saleDetailsListView.TabIndex = 15;
+            this.saleDetailsListView.UseCompatibleStateImageBehavior = false;
+            this.saleDetailsListView.View = System.Windows.Forms.View.Details;
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel3.Location = new System.Drawing.Point(45, 19);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(50, 19);
+            this.materialLabel3.TabIndex = 14;
+            this.materialLabel3.Text = "Ventas";
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(480, 556);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(159, 36);
+            this.materialButton1.TabIndex = 13;
+            this.materialButton1.Text = "ACTUALIZAR VENTA";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            // 
+            // deleteSaleBtn
+            // 
+            this.deleteSaleBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.deleteSaleBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.deleteSaleBtn.Depth = 0;
+            this.deleteSaleBtn.HighEmphasis = true;
+            this.deleteSaleBtn.Icon = null;
+            this.deleteSaleBtn.Location = new System.Drawing.Point(250, 556);
+            this.deleteSaleBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.deleteSaleBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.deleteSaleBtn.Name = "deleteSaleBtn";
+            this.deleteSaleBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.deleteSaleBtn.Size = new System.Drawing.Size(139, 36);
+            this.deleteSaleBtn.TabIndex = 12;
+            this.deleteSaleBtn.Text = "ELIMINAR VENTA";
+            this.deleteSaleBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.deleteSaleBtn.UseAccentColor = false;
+            this.deleteSaleBtn.UseVisualStyleBackColor = true;
+            this.deleteSaleBtn.Click += new System.EventHandler(this.deleteSaleBtn_Click);
+            // 
+            // createDetailsBtn
+            // 
+            this.createDetailsBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.createDetailsBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.createDetailsBtn.Depth = 0;
+            this.createDetailsBtn.HighEmphasis = true;
+            this.createDetailsBtn.Icon = null;
+            this.createDetailsBtn.Location = new System.Drawing.Point(28, 556);
+            this.createDetailsBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.createDetailsBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.createDetailsBtn.Name = "createDetailsBtn";
+            this.createDetailsBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.createDetailsBtn.Size = new System.Drawing.Size(138, 36);
+            this.createDetailsBtn.TabIndex = 11;
+            this.createDetailsBtn.Text = "AGREGAR VENTA";
+            this.createDetailsBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.createDetailsBtn.UseAccentColor = false;
+            this.createDetailsBtn.UseVisualStyleBackColor = true;
+            this.createDetailsBtn.Click += new System.EventHandler(this.createDetailsBtn_Click);
+            // 
+            // salesListView
+            // 
+            this.salesListView.AutoSizeTable = false;
+            this.salesListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.salesListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.salesListView.Depth = 0;
+            this.salesListView.FullRowSelect = true;
+            this.salesListView.HideSelection = false;
+            this.salesListView.Location = new System.Drawing.Point(28, 60);
+            this.salesListView.MinimumSize = new System.Drawing.Size(200, 100);
+            this.salesListView.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.salesListView.MouseState = MaterialSkin.MouseState.OUT;
+            this.salesListView.Name = "salesListView";
+            this.salesListView.OwnerDraw = true;
+            this.salesListView.Size = new System.Drawing.Size(617, 468);
+            this.salesListView.TabIndex = 10;
+            this.salesListView.UseCompatibleStateImageBehavior = false;
+            this.salesListView.View = System.Windows.Forms.View.Details;
             // 
             // tabPage1
             // 
@@ -94,7 +295,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 39);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1286, 610);
+            this.tabPage1.Size = new System.Drawing.Size(1266, 610);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Usuarios";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -201,10 +402,22 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 39);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1286, 610);
+            this.tabPage2.Size = new System.Drawing.Size(1266, 610);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Ciudades";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.Location = new System.Drawing.Point(35, 19);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(67, 19);
+            this.materialLabel2.TabIndex = 9;
+            this.materialLabel2.Text = "Ciudades";
             // 
             // actualizarCiudadBtn
             // 
@@ -297,7 +510,7 @@
             this.tabPage3.ImageKey = "icons8-product-50.png";
             this.tabPage3.Location = new System.Drawing.Point(4, 39);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1286, 610);
+            this.tabPage3.Size = new System.Drawing.Size(1266, 610);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Productos";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -414,108 +627,15 @@
             this.productosListView.View = System.Windows.Forms.View.Details;
             this.productosListView.SelectedIndexChanged += new System.EventHandler(this.productosListView_SelectedIndexChanged);
             // 
-            // tabPage4
+            // tabPage5
             // 
-            this.tabPage4.Controls.Add(this.materialLabel3);
-            this.tabPage4.Controls.Add(this.materialButton1);
-            this.tabPage4.Controls.Add(this.materialButton2);
-            this.tabPage4.Controls.Add(this.createSaleBtn);
-            this.tabPage4.Controls.Add(this.salesListView);
-            this.tabPage4.ImageKey = "icons8-sales-50.png";
-            this.tabPage4.Location = new System.Drawing.Point(4, 39);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1286, 610);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Ventas";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // materialLabel3
-            // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(45, 19);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(50, 19);
-            this.materialLabel3.TabIndex = 14;
-            this.materialLabel3.Text = "Ventas";
-            // 
-            // materialButton1
-            // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(480, 556);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(165, 36);
-            this.materialButton1.TabIndex = 13;
-            this.materialButton1.Text = "ACTUALIZAR CIUDAD";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
-            // 
-            // materialButton2
-            // 
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(250, 556);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(145, 36);
-            this.materialButton2.TabIndex = 12;
-            this.materialButton2.Text = "ELIMINAR CIUDAD";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
-            // 
-            // createSaleBtn
-            // 
-            this.createSaleBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.createSaleBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.createSaleBtn.Depth = 0;
-            this.createSaleBtn.HighEmphasis = true;
-            this.createSaleBtn.Icon = null;
-            this.createSaleBtn.Location = new System.Drawing.Point(28, 556);
-            this.createSaleBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.createSaleBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.createSaleBtn.Name = "createSaleBtn";
-            this.createSaleBtn.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.createSaleBtn.Size = new System.Drawing.Size(138, 36);
-            this.createSaleBtn.TabIndex = 11;
-            this.createSaleBtn.Text = "AGREGAR VENTA";
-            this.createSaleBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.createSaleBtn.UseAccentColor = false;
-            this.createSaleBtn.UseVisualStyleBackColor = true;
-            // 
-            // salesListView
-            // 
-            this.salesListView.AutoSizeTable = false;
-            this.salesListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.salesListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.salesListView.Depth = 0;
-            this.salesListView.FullRowSelect = true;
-            this.salesListView.HideSelection = false;
-            this.salesListView.Location = new System.Drawing.Point(28, 60);
-            this.salesListView.MinimumSize = new System.Drawing.Size(200, 100);
-            this.salesListView.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.salesListView.MouseState = MaterialSkin.MouseState.OUT;
-            this.salesListView.Name = "salesListView";
-            this.salesListView.OwnerDraw = true;
-            this.salesListView.Size = new System.Drawing.Size(1155, 468);
-            this.salesListView.TabIndex = 10;
-            this.salesListView.UseCompatibleStateImageBehavior = false;
-            this.salesListView.View = System.Windows.Forms.View.Details;
+            this.tabPage5.ImageKey = "icons8-sales-50.png";
+            this.tabPage5.Location = new System.Drawing.Point(4, 39);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(1266, 610);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Estadisticas";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // imageList1
             // 
@@ -525,24 +645,14 @@
             this.imageList1.Images.SetKeyName(1, "icons8-city-buildings-50.png");
             this.imageList1.Images.SetKeyName(2, "icons8-product-50.png");
             this.imageList1.Images.SetKeyName(3, "icons8-sales-50.png");
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(35, 19);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(67, 19);
-            this.materialLabel2.TabIndex = 9;
-            this.materialLabel2.Text = "Ciudades";
+            this.imageList1.Images.SetKeyName(4, "icons8-market-square-50.png");
+            this.imageList1.Images.SetKeyName(5, "icons8-contacto-de-negocio-50.png");
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 720);
+            this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.materialTabControl1;
@@ -550,6 +660,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Beauty";
             this.materialTabControl1.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userIconBtn)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -557,10 +670,18 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productImgPctrBox)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.PictureBox userIconBtn;
+
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
+
+        private MaterialSkin.Controls.MaterialListView saleDetailsListView;
+        private MaterialSkin.Controls.MaterialButton createSaleBtn;
+        private MaterialSkin.Controls.MaterialButton cleanCartBtn;
+
+        private System.Windows.Forms.TabPage tabPage5;
 
         private System.Windows.Forms.PictureBox productImgPctrBox;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
@@ -573,8 +694,8 @@
 
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
-        private MaterialSkin.Controls.MaterialButton createSaleBtn;
+        private MaterialSkin.Controls.MaterialButton deleteSaleBtn;
+        private MaterialSkin.Controls.MaterialButton createDetailsBtn;
         private MaterialSkin.Controls.MaterialListView salesListView;
 
         private MaterialSkin.Controls.MaterialLabel materialLabel2;

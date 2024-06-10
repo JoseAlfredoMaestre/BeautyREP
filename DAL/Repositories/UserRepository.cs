@@ -113,6 +113,7 @@ namespace DAL.Repositories
                         user.Phone = reader.GetString(3);
                         user.Email = reader.GetString(4);
                         user.CreateAt = reader.GetDateTime(7);
+                        user.IdentityCard = reader.GetString(9);
                         users.Add(user);
                     }
                 }

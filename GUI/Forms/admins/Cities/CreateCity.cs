@@ -7,6 +7,7 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using BLL.Services;
 using Entities.Models;
+using GUI.Config.Theme;
 
 namespace GUI.Forms.admins.Cities;
 
@@ -16,11 +17,9 @@ public partial class CreateCity : MaterialForm
 
     public CreateCity()
     {
-        var materialSkinManager = MaterialSkinManager.Instance;
-        materialSkinManager.AddFormToManage(this);
-        materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-        materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
+         ThemeManager.ConfigureTheme(this);
+         this.StartPosition = FormStartPosition.CenterScreen;
         InitializeComponent();
     }
 

@@ -20,6 +20,7 @@ public partial class DeleteProduct : MaterialForm
         InitializeComponent();
         ThemeManager.ConfigureTheme(this);
         this._productToDelete = product;
+        this.StartPosition = FormStartPosition.CenterScreen;
 
         descriptionMultiLine.Enabled = false;
         materialLabel4.Text = _productToDelete.Stock.ToString();

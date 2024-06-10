@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using BLL.Shared.Implements;
 using DAL.Repositories;
 using Entities.Models;
@@ -21,7 +22,25 @@ public class SaleService
     public Response<Sale> Save(params Sale[] entity)
     {
         var service = CreateService<Sale>.GetInstance().withRepository(_repository);
-        return service.Save(entity);
+        var res = service.Save(entity);
+        if (res.IsSuccess)
+        {
+            try
+            {
+                foreach (var sale in entity)
+                {
+                    foreach (var saleDetail in sale.SaleDetails)
+                    {
+                        ProductService.GetInstance().Update(saleDetail.Product.DeductStock(saleDetail.Quantity));
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                return ResponseBuilder<Sale>.Error(e);
+            }
+        }
+        return res;
     }
 
     public Response<HashSet<Sale>> GetAll()

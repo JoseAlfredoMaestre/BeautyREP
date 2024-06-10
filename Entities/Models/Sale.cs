@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using Entities.Interfaces;
 
@@ -17,8 +18,10 @@ public class Sale : IReadEntity, ICreateEntity, IDeleteEntity
     public SaleStatus Status { get; set; }
 
     public HashSet<SaleDetail> SaleDetails { get; set; }
+    [Required(ErrorMessage = "La ubicación es requerida.")]
     public SaleLocation Location { get; set; }
-
+    [Required(ErrorMessage = "El usuario es requerido.")]
+    public User User { get; set; } = new();
 
     public Sale()
     {
@@ -44,7 +47,7 @@ public class Sale : IReadEntity, ICreateEntity, IDeleteEntity
         Location = new();
     }
 
-    public Sale(long id, int discount, DateTime createAt, SaleStatus status, HashSet<SaleDetail> saleDetails, SaleLocation location)
+    public Sale(long id, int discount, DateTime createAt, SaleStatus status, HashSet<SaleDetail> saleDetails, SaleLocation location, User user)
     {
         Id = id;
         Discount = discount;
@@ -52,5 +55,7 @@ public class Sale : IReadEntity, ICreateEntity, IDeleteEntity
         Status = status;
         SaleDetails = saleDetails;
         Location = location;
+        User = user;
     }
+
 }

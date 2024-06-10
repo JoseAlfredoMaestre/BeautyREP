@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using BLL.Services;
 using Entities.Models;
+using GUI.Config.Theme;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -17,12 +18,8 @@ namespace GUI.Forms.admins.Users
         public CreateUser()
         {
             InitializeComponent();
-
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900,
-                Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            ThemeManager.ConfigureTheme(this);
         }
 
         private void createUserButton_Click(object sender, EventArgs e)

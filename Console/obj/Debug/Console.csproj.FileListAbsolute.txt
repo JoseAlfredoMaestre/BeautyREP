@@ -27,3 +27,26 @@ C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\Bea
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\Console\bin\Debug\DAL.pdb
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\Console\bin\Debug\GUI.pdb
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\Console\bin\Debug\GUI.exe.config
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Console\bin\Debug\DAL.dll
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Console\bin\Debug\GUI.exe
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Console\bin\Debug\MaterialSkin.dll
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Console\bin\Debug\DAL.pdb
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Console\bin\Debug\GUI.pdb
+C:\Users\natha\Desktop\Proyectos\BEAUTY\Console\bin\Debug\GUI.exe.config
+C:\Nathan\UPC\BEAUTY\Console\bin\Debug\Console.exe
+C:\Nathan\UPC\BEAUTY\Console\bin\Debug\Console.pdb
+C:\Nathan\UPC\BEAUTY\Console\bin\Debug\BLL.dll
+C:\Nathan\UPC\BEAUTY\Console\bin\Debug\DAL.dll
+C:\Nathan\UPC\BEAUTY\Console\bin\Debug\Entities.dll
+C:\Nathan\UPC\BEAUTY\Console\bin\Debug\GUI.exe
+C:\Nathan\UPC\BEAUTY\Console\bin\Debug\MaterialSkin.dll
+C:\Nathan\UPC\BEAUTY\Console\bin\Debug\BLL.pdb
+C:\Nathan\UPC\BEAUTY\Console\bin\Debug\DAL.pdb
+C:\Nathan\UPC\BEAUTY\Console\bin\Debug\Entities.pdb
+C:\Nathan\UPC\BEAUTY\Console\bin\Debug\GUI.pdb
+C:\Nathan\UPC\BEAUTY\Console\bin\Debug\GUI.exe.config
+C:\Nathan\UPC\BEAUTY\Console\obj\Debug\Console.csproj.AssemblyReference.cache
+C:\Nathan\UPC\BEAUTY\Console\obj\Debug\Console.csproj.CoreCompileInputs.cache
+C:\Nathan\UPC\BEAUTY\Console\obj\Debug\Console.csproj.CopyComplete
+C:\Nathan\UPC\BEAUTY\Console\obj\Debug\Console.exe
+C:\Nathan\UPC\BEAUTY\Console\obj\Debug\Console.pdb

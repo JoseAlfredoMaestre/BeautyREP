@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using BLL.Services;
 using Entities.Models;
+using GUI.Config.Theme;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -14,12 +15,8 @@ public partial class UpdateCity : MaterialForm
 
     public UpdateCity(City city)
     {
-
-        var materialSkinManager = MaterialSkinManager.Instance;
-        materialSkinManager.AddFormToManage(this);
-        materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-        materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
-
+        this.StartPosition = FormStartPosition.CenterScreen;
+        ThemeManager.ConfigureTheme(this);
         this._cityToUpdate = city;
         InitializeComponent();
 

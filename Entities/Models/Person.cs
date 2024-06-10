@@ -63,6 +63,7 @@ public class Person
     //Se usan anotaciones para validar los campos via DataAnnotations / Vendrian a ser validaciones para el formulario
     [Required(ErrorMessage = "El campo cédula es requerido.")]
     [StringLength(10, ErrorMessage = "La cédula no puede tener más de 10 caracteres.")]
+    [RegularExpression("^[0-9]*$", ErrorMessage = "La cédula solo puede contener números.")]
     public string IdentityCard { get; set; }
 
     [Required(ErrorMessage = "El campo nombres es requerido.")]

@@ -20,6 +20,7 @@ public partial class CreateProduct : MaterialForm
 
     public CreateProduct()
     {
+        this.StartPosition = FormStartPosition.CenterScreen;
         ThemeManager.ConfigureTheme(this);
         InitializeComponent();
     }

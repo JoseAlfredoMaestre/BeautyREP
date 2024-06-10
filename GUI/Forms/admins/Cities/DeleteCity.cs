@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using BLL.Services;
 using Entities.Models;
+using GUI.Config.Theme;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -14,13 +15,11 @@ public partial class DeleteCity : MaterialForm
     public event Action CityDeleted;
     public DeleteCity(City city)
     {
+        ThemeManager.ConfigureTheme(this);
         InitializeComponent();
         this._cityToDelete = city;
+        this.StartPosition = FormStartPosition.CenterScreen;
 
-        var materialSkinManager = MaterialSkinManager.Instance;
-        materialSkinManager.AddFormToManage(this);
-        materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-        materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
         descriptionMultiLine.Enabled = false;
 

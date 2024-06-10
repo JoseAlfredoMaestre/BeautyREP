@@ -65,18 +65,23 @@ public class Product : ICrudEntity
         Image = image;
     }
 
-    public void AddStock(int count)
+    public Product AddStock(int count)
     {
         this.Stock += count;
+        return this;
     }
 
-    public void DeductStock(int count)
+    public Product DeductStock(int count)
     {
         AddStock(-count);
+        return this;
     }
 
-    public void UpdateStock(int count)
+    public Product UpdateStock(int count)
     {
         Stock = count;
+        return this;
     }
+
+
 }

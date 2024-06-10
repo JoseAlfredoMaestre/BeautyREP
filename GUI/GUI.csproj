@@ -100,6 +100,30 @@
     <Compile Include="Forms\admins\Products\UpdateProduct.Designer.cs">
       <DependentUpon>UpdateProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\admins\Sales\CreateDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\admins\Sales\CreateDetails.Designer.cs">
+      <DependentUpon>CreateDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\admins\Sales\CreateSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\admins\Sales\CreateSale.Designer.cs">
+      <DependentUpon>CreateSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\admins\Sales\DeleteSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\admins\Sales\DeleteSale.Designer.cs">
+      <DependentUpon>DeleteSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\admins\UserProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\admins\UserProfile.Designer.cs">
+      <DependentUpon>UserProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\admins\Users\CreateUser.cs" />
     <Compile Include="Forms\admins\Users\CreateUser.Designer.cs">
       <DependentUpon>CreateUser.cs</DependentUpon>
@@ -112,11 +136,29 @@
     <Compile Include="Forms\admins\Users\UpdateUser.Designer.cs">
       <DependentUpon>UpdateUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Users\UserHome.cs">
+    <Compile Include="Forms\Users\CreateDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Users\UserHome.Designer.cs">
-      <DependentUpon>UserHome.cs</DependentUpon>
+    <Compile Include="Forms\Users\CreateDetails.Designer.cs">
+      <DependentUpon>CreateDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\CreateSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\CreateSale.Designer.cs">
+      <DependentUpon>CreateSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\UserProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\UserProfile.Designer.cs">
+      <DependentUpon>UserProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -147,6 +189,18 @@
     <EmbeddedResource Include="Forms\admins\Products\UpdateProduct.resx">
       <DependentUpon>UpdateProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\admins\Sales\CreateDetails.resx">
+      <DependentUpon>CreateDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\admins\Sales\CreateSale.resx">
+      <DependentUpon>CreateSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\admins\Sales\DeleteSale.resx">
+      <DependentUpon>DeleteSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\admins\UserProfile.resx">
+      <DependentUpon>UserProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\admins\Users\CreateUser.resx">
       <DependentUpon>CreateUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,8 +210,17 @@
     <EmbeddedResource Include="Forms\admins\Users\UpdateUser.resx">
       <DependentUpon>UpdateUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Users\UserHome.resx">
-      <DependentUpon>UserHome.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Users\CreateDetails.resx">
+      <DependentUpon>CreateDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\CreateSale.resx">
+      <DependentUpon>CreateSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\UserProfile.resx">
+      <DependentUpon>UserProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -199,6 +262,9 @@
       <Project>{de8e6589-4fd4-4d2b-9657-a302d50a5473}</Project>
       <Name>Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\admins\Stats\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

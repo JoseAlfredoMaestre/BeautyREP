@@ -2,4 +2,13 @@
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=GUI_002FForms_002Fadmins_002FCities_002FCreateCity/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=GUI_002FForms_002Fadmins_002FCities_002FDeleteCity/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=GUI_002FForms_002Fadmins_002FCities_002FUpdateCity/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=GUI_002FForms_002Fadmins_002FUserProfile/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=GUI_002FForms_002FUsers_002FCreateDetails/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=GUI_002FForms_002FUsers_002FCreateSale/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=GUI_002FForms_002FUsers_002FHome/@EntryIndexedValue">True</s:Boolean>
+	
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=GUI_002FForms_002FUsers_002FUserHome/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=GUI_002FForms_002FUsers_002FUserHome/@EntryIndexRemoved">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=GUI_002FForms_002FUsers_002FUserProfile/@EntryIndexedValue">True</s:Boolean>
+	
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean></wpf:ResourceDictionary>

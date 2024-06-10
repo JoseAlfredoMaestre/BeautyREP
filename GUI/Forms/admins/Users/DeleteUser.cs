@@ -11,8 +11,9 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using BLL.Services;
 using Entities.Models;
+using GUI.Config.Theme;
 
-namespace GUI.Forms.Users
+namespace GUI.Forms.admins.Users
 {
     public partial class DeleteUser : MaterialForm
     {
@@ -21,12 +22,11 @@ namespace GUI.Forms.Users
         public DeleteUser(User userToDelete)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            ThemeManager.ConfigureTheme(this);
             this.userToDelete = userToDelete;
 
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            materialLabel6.Text = userToDelete.IdentityCard;
             materialLabel7.Text = userToDelete.Names;
             materialLabel8.Text = userToDelete.Surnames;
             materialLabel9.Text = userToDelete.Phone;

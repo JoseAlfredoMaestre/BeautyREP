@@ -1,40 +1,54 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using BLL.Services;
 using Entities.Models;
+using GUI.Config.Theme;
 using GUI.Forms.admins.Cities;
 using GUI.Forms.admins.Products;
+using GUI.Forms.admins.Sales;
 using GUI.Forms.admins.Users;
 using GUI.Forms.Users;
-using MaterialSkin;
 using MaterialSkin.Controls;
+using CreateDetails = GUI.Forms.admins.Sales.CreateDetails;
+using CreateSale = GUI.Forms.admins.Sales.CreateSale;
 
 namespace GUI.Forms.admins
 {
     public partial class Home : MaterialForm
     {
+        public HashSet<SaleDetail> SaleDetails;
+        private static Home _instance;
+
+        public static Home GetInstance()
+        {
+            return _instance ??= new Home();
+        }
+
         public Home()
         {
+            ThemeManager.ConfigureTheme(this);
+            _instance = this;
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
 
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            SaleDetails = new();
 
             LoadDataToUserList();
             LoadDataToCitiesList();
             LoadDataToProductsList();
+            LoadDataToSalesList();
+            LoadDataToSaleDetailsList();
         }
 
         //Cargar datos a la lista de usuarios
         private void LoadDataToUserList()
         {
-            materialListView1.Columns.Add("ID", 50);
+            materialListView1.Columns.Add("Id", 100);
+            materialListView1.Columns.Add("Cedula", 100);
             materialListView1.Columns.Add("Nombres", 200);
             materialListView1.Columns.Add("Apellidos", 200);
             materialListView1.Columns.Add("Telefono", 200);
@@ -57,6 +71,7 @@ namespace GUI.Forms.admins
                     ListViewItem item = new ListViewItem();
 
                     item.SubItems[0].Text = value.Id.ToString();
+                    item.SubItems.Add(value.IdentityCard);
                     item.SubItems.Add(value.Names);
                     item.SubItems.Add(value.Surnames);
                     item.SubItems.Add(value.Phone);
@@ -143,6 +158,75 @@ namespace GUI.Forms.admins
             }
         }
 
+        //Cargar datos a la Lista de ventas
+        private void LoadDataToSalesList()
+        {
+            salesListView.Columns.Add("ID", 100);
+            salesListView.Columns.Add("Precio Total", 100);
+            salesListView.Columns.Add("Estado", 200);
+            salesListView.Columns.Add("Ciudad de entrega", 200);
+            salesListView.Columns.Add("Dirección de entrega", 200);
+            salesListView.Columns.Add("Fecha de creación", 200);
+            salesListView.Columns.Add("Identificación del cliente", 200);
+
+
+            //Lista de productos
+            var sales = SaleService.GetInstance().GetAll().Data;
+
+            // Verificar si la lista de productos está vacía
+            if (!sales.Any())
+            {
+                ListViewItem item = new ListViewItem("No hay productos activos en este momento.");
+                salesListView.Items.Add(item);
+            }
+            else
+            {
+                // Agregar datos a la lista
+                foreach (var sale in sales)
+                {
+                    ListViewItem item = new ListViewItem(sale.Id.ToString());
+
+                    item.SubItems.Add(sale.TotalPrice.ToString("N0"));
+                    item.SubItems.Add(sale.Status.Name);
+                    item.SubItems.Add(sale.Location.City.Name);
+                    item.SubItems.Add(sale.Location.Address);
+                    item.SubItems.Add(sale.CreateAt.ToShortDateString());
+                    item.SubItems.Add(sale.User.Id.ToString());
+
+                    salesListView.Items.Add(item);
+                }
+            }
+        }
+
+        //Cargar datos a la lista de detalles de venta / Carrito de compra
+        private void LoadDataToSaleDetailsList()
+        {
+            saleDetailsListView.Columns.Add("Nombre del producto", 100);
+            saleDetailsListView.Columns.Add("Cantidad", 200);
+            saleDetailsListView.Columns.Add("Subtotal", 200);
+            saleDetailsListView.Columns.Add("Fecha de creación", 200);
+
+            // Verificar si la lista de productos está vacía
+            if (!SaleDetails.Any())
+            {
+                ListViewItem item = new ListViewItem("No hay productos activos en este momento.");
+                saleDetailsListView.Items.Add(item);
+            }
+            else
+            {
+                // Agregar datos a la lista
+                foreach (var sale in SaleDetails)
+                {
+                    ListViewItem item = new ListViewItem(sale.Product.Name); // Usar el contador como el primer subitem
+                    item.SubItems.Add(sale.Quantity.ToString());
+                    item.SubItems.Add(sale.Subtotal.ToString("N0"));
+                    item.SubItems.Add(sale.CreateAt.ToShortDateString());
+
+                    saleDetailsListView.Items.Add(item);
+                }
+            }
+        }
+
         //Actualizar lista de usuarios
         private void RefreshUserList()
         {
@@ -152,18 +236,21 @@ namespace GUI.Forms.admins
             // Recarga la lista de usuarios
             var usuarios = UserService.GetInstance().GetAll().Data;
 
+            // Verificar si la lista de usuarios está vacía
             if (!usuarios.Any())
             {
-                ListViewItem item = new ListViewItem("No hay datos");
+                ListViewItem item = new ListViewItem("No hay usuarios activos en este momento.");
                 materialListView1.Items.Add(item);
             }
             else
             {
+                // Agregar datos a la lista
                 foreach (var value in usuarios)
                 {
                     ListViewItem item = new ListViewItem();
 
                     item.SubItems[0].Text = value.Id.ToString();
+                    item.SubItems.Add(value.IdentityCard);
                     item.SubItems.Add(value.Names);
                     item.SubItems.Add(value.Surnames);
                     item.SubItems.Add(value.Phone);
@@ -239,6 +326,67 @@ namespace GUI.Forms.admins
             }
         }
 
+        //Actualizar lista de detalles de la venta / carrito de compra
+        private void RefreshSaleDetailsList()
+        {
+            // Limpia la lista de detalles de la venta
+            saleDetailsListView.Items.Clear();
+
+            // Verificar si la lista de productos está vacía
+            if (!SaleDetails.Any())
+            {
+                ListViewItem item = new ListViewItem("No hay productos activos en este momento.");
+                saleDetailsListView.Items.Add(item);
+            }
+            else
+            {
+                // Agregar datos a la lista
+                foreach (var sale in SaleDetails)
+                {
+                    ListViewItem item = new ListViewItem(sale.Product.Name);
+                    item.SubItems.Add(sale.Quantity.ToString());
+                    item.SubItems.Add(sale.Subtotal.ToString());
+                    item.SubItems.Add(sale.CreateAt.ToShortDateString());
+
+                    saleDetailsListView.Items.Add(item);
+                }
+            }
+        }
+
+        //Actualizar lista de detalles de la venta / carrito de compra
+        private void RefreshSaleList()
+        {
+            // Limpia la lista de detalles de la venta
+            salesListView.Items.Clear();
+
+            //Lista de productos
+            var sales = SaleService.GetInstance().GetAll().Data;
+
+            // Verificar si la lista de productos está vacía
+            if (!sales.Any())
+            {
+                ListViewItem item = new ListViewItem("No hay productos activos en este momento.");
+                salesListView.Items.Add(item);
+            }
+            else
+            {
+                // Agregar datos a la lista
+                foreach (var sale in sales)
+                {
+                    ListViewItem item = new ListViewItem(sale.Id.ToString());
+
+                    item.SubItems.Add(sale.TotalPrice.ToString("N0"));
+                    item.SubItems.Add(sale.Status.Name);
+                    item.SubItems.Add(sale.Location.City.Name);
+                    item.SubItems.Add(sale.Location.Address);
+                    item.SubItems.Add(sale.CreateAt.ToShortDateString());
+                    item.SubItems.Add(sale.User.Id.ToString());
+
+                    salesListView.Items.Add(item);
+                }
+            }
+        }
+
         //--------------------- Usuario CRUD  --------------------------------//
 
         private void materialButton1_Click(object sender, EventArgs e)
@@ -250,6 +398,13 @@ namespace GUI.Forms.admins
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
+            if (materialListView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Por favor, seleccione un usuario.", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
             foreach (ListViewItem item in materialListView1.SelectedItems)
             {
                 int userId = int.Parse(item.SubItems[0].Text);
@@ -265,7 +420,8 @@ namespace GUI.Forms.admins
         {
             if (materialListView1.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Por favor, seleccione un usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor, seleccione un usuario.", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
 
@@ -294,7 +450,8 @@ namespace GUI.Forms.admins
         {
             if (ciudadesListView.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Por favor, seleccione una ciudad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor, seleccione una ciudad.", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
 
@@ -313,7 +470,8 @@ namespace GUI.Forms.admins
         {
             if (ciudadesListView.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Por favor, seleccione una ciudad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor, seleccione una ciudad.", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
 
@@ -365,7 +523,8 @@ namespace GUI.Forms.admins
         {
             if (productosListView.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Por favor, seleccione un producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor, seleccione un producto.", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
 
@@ -384,7 +543,8 @@ namespace GUI.Forms.admins
         {
             if (productosListView.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Por favor, seleccione un producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor, seleccione un producto.", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
 
@@ -397,6 +557,64 @@ namespace GUI.Forms.admins
                 updateProduct.ProductUpdated += RefreshProductsList;
                 updateProduct.Show();
             }
+        }
+        //--------------------- Productos CRUD  --------------------------------//
+
+        //--------------------- Ventas CRUD  --------------------------------//
+        private void createDetailsBtn_Click(object sender, EventArgs e)
+        {
+            CreateDetails createDetails = new CreateDetails();
+            createDetails.SaleDetailsCreated += RefreshSaleDetailsList;
+            createDetails.Show();
+        }
+
+        private void cleanCartBtn_Click(object sender, EventArgs e)
+        {
+            SaleDetails.Clear();
+            RefreshSaleDetailsList();
+        }
+
+        private void createSaleBtn_Click(object sender, EventArgs e)
+        {
+            if (!SaleDetails.Any())
+            {
+                MessageBox.Show("Debe realizar ventas o detalles de la venta primeramente.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            CreateSale createSale = new CreateSale();
+            createSale.SaleCreated += RefreshSaleList;
+            createSale.SaleCreated += RefreshSaleDetailsList;
+            createSale.Show();
+        }
+
+        private void deleteSaleBtn_Click(object sender, EventArgs e)
+        {
+            if (salesListView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Por favor, seleccione una venta.", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            foreach (ListViewItem item in salesListView.SelectedItems)
+            {
+                int saleId = int.Parse(item.SubItems[0].Text);
+                Sale sale = SaleService.GetInstance().GetById(saleId).Data;
+
+                DeleteSale deleteSale = new DeleteSale(sale);
+                deleteSale.SaleDeleted += RefreshSaleList;
+                deleteSale.SaleDeleted += RefreshSaleDetailsList;
+                deleteSale.Show();
+            }
+        }
+
+        //--------------------- Ventas CRUD  --------------------------------//
+        private void userIconBtn_Click(object sender, EventArgs e)
+        {
+            UserProfile userProfile = new();
+            userProfile.Show();
         }
     }
 }
