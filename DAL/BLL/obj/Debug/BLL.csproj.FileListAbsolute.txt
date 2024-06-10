@@ -1,0 +1,22 @@
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\BLL\bin\Debug\BLL.dll
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\BLL\bin\Debug\BLL.pdb
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\BLL\obj\Debug\BLL.dll
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\BLL\obj\Debug\BLL.pdb
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\BLL\bin\Debug\DAL.dll
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\BLL\bin\Debug\Entities.dll
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\BLL\bin\Debug\DAL.pdb
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\BLL\bin\Debug\Entities.pdb
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\natha\Desktop\Proyectos\BEAUTY\BLL\bin\Debug\BLL.dll
+C:\Users\natha\Desktop\Proyectos\BEAUTY\BLL\bin\Debug\BLL.pdb
+C:\Users\natha\Desktop\Proyectos\BEAUTY\BLL\bin\Debug\DAL.dll
+C:\Users\natha\Desktop\Proyectos\BEAUTY\BLL\bin\Debug\Entities.dll
+C:\Users\natha\Desktop\Proyectos\BEAUTY\BLL\bin\Debug\DAL.pdb
+C:\Users\natha\Desktop\Proyectos\BEAUTY\BLL\bin\Debug\Entities.pdb
+C:\Users\natha\Desktop\Proyectos\BEAUTY\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\natha\Desktop\Proyectos\BEAUTY\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\natha\Desktop\Proyectos\BEAUTY\BLL\obj\Debug\BLL.csproj.Up2Date
+C:\Users\natha\Desktop\Proyectos\BEAUTY\BLL\obj\Debug\BLL.dll
+C:\Users\natha\Desktop\Proyectos\BEAUTY\BLL\obj\Debug\BLL.pdb
