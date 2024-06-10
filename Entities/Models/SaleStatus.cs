@@ -6,7 +6,7 @@ namespace Entities.Models;
 public class SaleStatus : IEntity
 {
     public long Id { get; set; }
-    public string name { get; set; }
+    public string Name { get; set; }
     public DateTime CreateAt { get; set; }
 
     public SaleStatus()
@@ -15,13 +15,13 @@ public class SaleStatus : IEntity
 
     public SaleStatus(string name)
     {
-        this.name = name;
+        this.Name = name;
     }
 
     public SaleStatus(long id, string name, DateTime createAt)
     {
         Id = id;
-        this.name = name;
+        this.Name = name;
         CreateAt = createAt;
     }
 }

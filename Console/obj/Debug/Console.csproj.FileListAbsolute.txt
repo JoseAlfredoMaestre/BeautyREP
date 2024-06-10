@@ -27,20 +27,3 @@ C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\Bea
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\Console\bin\Debug\DAL.pdb
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\Console\bin\Debug\GUI.pdb
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\Console\bin\Debug\GUI.exe.config
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\Console\bin\Debug\Console.exe
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\Console\bin\Debug\Console.pdb
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\Console\bin\Debug\BLL.dll
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\Console\bin\Debug\DAL.dll
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\Console\bin\Debug\Entities.dll
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\Console\bin\Debug\GUI.exe
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\Console\bin\Debug\MaterialSkin.dll
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\Console\bin\Debug\BLL.pdb
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\Console\bin\Debug\DAL.pdb
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\Console\bin\Debug\Entities.pdb
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\Console\bin\Debug\GUI.pdb
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\Console\bin\Debug\GUI.exe.config
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\Console\obj\Debug\Console.csproj.AssemblyReference.cache
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\Console\obj\Debug\Console.csproj.CoreCompileInputs.cache
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\Console\obj\Debug\Console.csproj.Up2Date
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\Console\obj\Debug\Console.exe
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\Console\obj\Debug\Console.pdb

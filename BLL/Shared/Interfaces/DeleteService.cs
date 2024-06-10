@@ -7,6 +7,6 @@ namespace BLL.Shared.Interfaces
 {
     public interface IDeleteService<T> : IService where T : IDeleteEntity
     {
-        Response<T> Delete(long id);
+        Response<T> Delete(params long[] ids);
     }
 }

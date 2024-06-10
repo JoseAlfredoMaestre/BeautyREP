@@ -23,66 +23,66 @@
         #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.usernameInput = new MaterialSkin.Controls.MaterialTextBox2();
+            this.passwordInput = new MaterialSkin.Controls.MaterialTextBox();
             this.loginButton = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
-            // 
-            // materialTextBox21
-            // 
-            this.materialTextBox21.AnimateReadOnly = false;
-            this.materialTextBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox21.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox21.Depth = 0;
-            this.materialTextBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox21.HideSelection = true;
-            this.materialTextBox21.Hint = "Nombre de usuario";
-            this.materialTextBox21.LeadingIcon = null;
-            this.materialTextBox21.Location = new System.Drawing.Point(289, 131);
-            this.materialTextBox21.MaxLength = 32767;
-            this.materialTextBox21.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox21.Name = "materialTextBox21";
-            this.materialTextBox21.PasswordChar = '\0';
-            this.materialTextBox21.PrefixSuffixText = null;
-            this.materialTextBox21.ReadOnly = false;
-            this.materialTextBox21.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox21.SelectedText = "";
-            this.materialTextBox21.SelectionLength = 0;
-            this.materialTextBox21.SelectionStart = 0;
-            this.materialTextBox21.ShortcutsEnabled = true;
-            this.materialTextBox21.Size = new System.Drawing.Size(250, 48);
-            this.materialTextBox21.TabIndex = 0;
-            this.materialTextBox21.TabStop = false;
-            this.materialTextBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox21.TrailingIcon = null;
-            this.materialTextBox21.UseSystemPasswordChar = false;
-            // 
-            // materialTextBox1
-            // 
-            this.materialTextBox1.AnimateReadOnly = false;
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox1.Hint = "Contraseña";
-            this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(289, 222);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Password = true;
-            this.materialTextBox1.Size = new System.Drawing.Size(250, 50);
-            this.materialTextBox1.TabIndex = 1;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.TrailingIcon = null;
-            // 
+            //
+            // usernameInput
+            //
+            this.usernameInput.AnimateReadOnly = false;
+            this.usernameInput.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.usernameInput.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.usernameInput.Depth = 0;
+            this.usernameInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.usernameInput.HideSelection = true;
+            this.usernameInput.Hint = "Nombre de usuario";
+            this.usernameInput.LeadingIcon = null;
+            this.usernameInput.Location = new System.Drawing.Point(289, 131);
+            this.usernameInput.MaxLength = 32767;
+            this.usernameInput.MouseState = MaterialSkin.MouseState.OUT;
+            this.usernameInput.Name = "usernameInput";
+            this.usernameInput.PasswordChar = '\0';
+            this.usernameInput.PrefixSuffixText = null;
+            this.usernameInput.ReadOnly = false;
+            this.usernameInput.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.usernameInput.SelectedText = "";
+            this.usernameInput.SelectionLength = 0;
+            this.usernameInput.SelectionStart = 0;
+            this.usernameInput.ShortcutsEnabled = true;
+            this.usernameInput.Size = new System.Drawing.Size(250, 48);
+            this.usernameInput.TabIndex = 0;
+            this.usernameInput.TabStop = false;
+            this.usernameInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.usernameInput.TrailingIcon = null;
+            this.usernameInput.UseSystemPasswordChar = false;
+            //
+            // passwordInput
+            //
+            this.passwordInput.AnimateReadOnly = false;
+            this.passwordInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.passwordInput.Depth = 0;
+            this.passwordInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.passwordInput.Hint = "Contraseña";
+            this.passwordInput.LeadingIcon = null;
+            this.passwordInput.Location = new System.Drawing.Point(289, 222);
+            this.passwordInput.MaxLength = 50;
+            this.passwordInput.MouseState = MaterialSkin.MouseState.OUT;
+            this.passwordInput.Multiline = false;
+            this.passwordInput.Name = "passwordInput";
+            this.passwordInput.Password = true;
+            this.passwordInput.Size = new System.Drawing.Size(250, 50);
+            this.passwordInput.TabIndex = 1;
+            this.passwordInput.Text = "";
+            this.passwordInput.TrailingIcon = null;
+            //
             // loginButton
-            // 
+            //
             this.loginButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.loginButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.loginButton.Depth = 0;
@@ -100,26 +100,25 @@
             this.loginButton.UseAccentColor = false;
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
-            // 
+            //
             // Login
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.loginButton);
-            this.Controls.Add(this.materialTextBox1);
-            this.Controls.Add(this.materialTextBox21);
+            this.Controls.Add(this.passwordInput);
+            this.Controls.Add(this.usernameInput);
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox21;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialTextBox2 usernameInput;
+        private MaterialSkin.Controls.MaterialTextBox passwordInput;
         private MaterialSkin.Controls.MaterialButton loginButton;
     }
 }

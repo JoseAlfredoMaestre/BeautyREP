@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using BLL.Shared.Interfaces;
+using DAL;
 using Entities.Interfaces;
 using Entities.Shared;
 
@@ -16,13 +17,10 @@ public class CreateService<T> : ICreateService<T> where T : ICreateEntity
         if (_instance == null) _instance = new CreateService<T>();
         return _instance;
     }
-    private CreateService()
-    {
+    private CreateService() { }
 
-    }
-
-    private HashSet<T> Repository { get; set; }
-    public CreateService<T> withRepository(HashSet<T> repository)
+    private ICreateRepository<T> Repository { get; set; }
+    public CreateService<T> withRepository(ICreateRepository<T> repository)
     {
         Repository = repository;
         return this;
@@ -34,7 +32,7 @@ public class CreateService<T> : ICreateService<T> where T : ICreateEntity
         {
             foreach (var entity in entities)
             {
-                Repository.Add(entity);
+                Repository.Insert(entity);
             }
             return new ResponseBuilder<T>().WithSuccess(true);
         }

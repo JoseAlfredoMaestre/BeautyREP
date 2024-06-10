@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using BLL.Shared.Implements;
 using BLL.Shared.Interfaces;
+using DAL;
+using DAL.Repositories;
 using Entities.Models;
 using Entities.Shared;
 
@@ -9,15 +11,17 @@ namespace BLL.Services;
 public class CityService : ICrudService<City>
 {
     private static CityService? _instance;
-    public static CityService GetInstance() { return _instance ??= new CityService(new HashSet<City>()); }
-    private CityService(HashSet<City> repository)
+
+    public static CityService GetInstance()
+    {
+        return _instance ??= new CityService(new CityRepository());
+    }
+    private CityService(CityRepository repository)
     {
         _repository = repository;
     }
 
-    private HashSet<City> _repository;
-
-
+    private readonly CityRepository _repository;
 
     public Response<City> Save(params City[] entity)
     {
@@ -37,15 +41,15 @@ public class CityService : ICrudService<City>
         return service.GetById(id);
     }
 
-    public Response<City> Update(City entity, long id)
+    public Response<bool> Update(City entity)
     {
         var service = UpdateService<City>.GetInstance().withRepository(_repository);
-        return service.Update(entity, id);
+        return service.Update(entity);
     }
 
-    public Response<City> Delete(long id)
+    public Response<City> Delete(params long[] ids)
     {
         var service = DeleteService<City>.GetInstance().withRepository(_repository);
-        return service.Delete(id);
+        return service.Delete(ids);
     }
 }

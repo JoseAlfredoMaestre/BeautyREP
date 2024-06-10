@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using BLL.Shared.Implements;
+using DAL.Repositories;
 using Entities.Models;
 using Entities.Shared;
 
@@ -8,13 +9,13 @@ namespace BLL.Services;
 public class SaleUbicationService
 {
     private static SaleUbicationService? _instance;
-    public static SaleUbicationService GetInstance() { return _instance ??= new SaleUbicationService(new HashSet<SaleLocation>()); }
-    private SaleUbicationService(HashSet<SaleLocation> repository)
+    public static SaleUbicationService GetInstance() { return _instance ??= new SaleUbicationService(new SaleLocationRepository()); }
+    private SaleUbicationService(SaleLocationRepository repository)
     {
         _repository = repository;
     }
 
-    private HashSet<SaleLocation> _repository;
+    private SaleLocationRepository _repository;
 
     public Response<SaleLocation> Save(params SaleLocation[] entity)
     {

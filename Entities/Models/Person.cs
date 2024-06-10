@@ -2,11 +2,21 @@
 
 namespace Entities.Models;
 
-public abstract class Person
+public class Person
 {
 
-    public Person(long id, string identityCard, string names, string surnames, string phone, string email, string? username,
-        string? password, DateTime createAt)
+    public Person(long id, string identityCard, string names, string surnames, string phone, string email, DateTime createAt)
+    {
+        Id = id;
+        IdentityCard = identityCard;
+        Names = names;
+        Surnames = surnames;
+        Phone = phone;
+        Email = email;
+        CreateAt = createAt;
+    }
+
+    public Person(long id, string identityCard, string names, string surnames, string phone, string email, string? username, string? password, DateTime createAt, string? role)
     {
         Id = id;
         IdentityCard = identityCard;
@@ -17,8 +27,8 @@ public abstract class Person
         Username = username;
         Password = password;
         CreateAt = createAt;
+        Role = role;
     }
-
     public Person( string identityCard, string names, string surnames, string phone, string email, string? username, string? password)
     {
         Names = names;
@@ -35,7 +45,18 @@ public abstract class Person
     {
     }
 
-
+    protected Person(long id, string identityCard, string names, string surnames, string phone, string email, string? username, string? password, DateTime createAt)
+    {
+        Id = id;
+        IdentityCard = identityCard;
+        Names = names;
+        Surnames = surnames;
+        Phone = phone;
+        Email = email;
+        Username = username;
+        Password = password;
+        CreateAt = createAt;
+    }
     public long Id { get; set; }
     public string IdentityCard { get; set; }
     public string Names { get; set; }

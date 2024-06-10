@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using BLL.Shared.Interfaces;
+using DAL;
 using Entities.Interfaces;
 using Entities.Shared;
 
@@ -23,9 +24,9 @@ public class ReadService<T> : IReadService<T> where T : IReadEntity
     }
 
 
-    private HashSet<T> Repository { get; set; }
+    private IReadRepository<T> Repository { get; set; }
 
-    public ReadService<T> withRepository(HashSet<T> repository)
+    public ReadService<T> withRepository(IReadRepository<T> repository)
     {
         Repository = repository;
         return this;
@@ -35,7 +36,7 @@ public class ReadService<T> : IReadService<T> where T : IReadEntity
     {
         try
         {
-            return new ResponseBuilder<HashSet<T>>().WithData(Repository);
+            return Repository.GetAll();
         }
         catch (Exception e)
         {
@@ -47,9 +48,7 @@ public class ReadService<T> : IReadService<T> where T : IReadEntity
     {
         try
         {
-            var item = Repository.FirstOrDefault(item => item.Id == id);
-            return new ResponseBuilder<T>().WithData(item);
-
+            return Repository.GetById(id);
         }
         catch (Exception e)
         {

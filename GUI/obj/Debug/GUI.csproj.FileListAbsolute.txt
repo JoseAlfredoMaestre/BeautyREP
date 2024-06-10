@@ -43,25 +43,27 @@ C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\Bea
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\GUI\obj\Debug\GUI.exe
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BeautyDesktopApp\GUI\obj\Debug\GUI.pdb
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\bin\Debug\GUI.exe.config
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\bin\Debug\GUI.exe
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\bin\Debug\GUI.pdb
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\bin\Debug\BLL.dll
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\bin\Debug\DAL.dll
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\bin\Debug\Entities.dll
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\bin\Debug\MaterialSkin.dll
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\bin\Debug\BLL.pdb
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\bin\Debug\DAL.pdb
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\bin\Debug\Entities.pdb
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\obj\Debug\GUI.Forms.Home.resources
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\obj\Debug\GUI.Forms.Users.CreateUser.resources
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\obj\Debug\GUI.Forms.Users.DeleteUser.resources
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\obj\Debug\GUI.Forms.Users.UpdateUser.resources
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\obj\Debug\GUI.Login.resources
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\obj\Debug\GUI.Properties.Resources.resources
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\obj\Debug\GUI.csproj.Up2Date
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\obj\Debug\GUI.exe
-C:\Users\JOSE MAESTRE\Desktop\PROYECTOP3\GUI\obj\Debug\GUI.pdb
+C:\Nathan\UPC\BEAUTY\GUI\bin\Debug\GUI.exe.config
+C:\Nathan\UPC\BEAUTY\GUI\bin\Debug\GUI.exe
+C:\Nathan\UPC\BEAUTY\GUI\bin\Debug\GUI.pdb
+C:\Nathan\UPC\BEAUTY\GUI\bin\Debug\BLL.dll
+C:\Nathan\UPC\BEAUTY\GUI\bin\Debug\DAL.dll
+C:\Nathan\UPC\BEAUTY\GUI\bin\Debug\Entities.dll
+C:\Nathan\UPC\BEAUTY\GUI\bin\Debug\MaterialSkin.dll
+C:\Nathan\UPC\BEAUTY\GUI\bin\Debug\BLL.pdb
+C:\Nathan\UPC\BEAUTY\GUI\bin\Debug\DAL.pdb
+C:\Nathan\UPC\BEAUTY\GUI\bin\Debug\Entities.pdb
+C:\Nathan\UPC\BEAUTY\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Nathan\UPC\BEAUTY\GUI\obj\Debug\GUI.Forms.Home.resources
+C:\Nathan\UPC\BEAUTY\GUI\obj\Debug\GUI.Forms.Users.CreateUser.resources
+C:\Nathan\UPC\BEAUTY\GUI\obj\Debug\GUI.Forms.Users.DeleteUser.resources
+C:\Nathan\UPC\BEAUTY\GUI\obj\Debug\GUI.Forms.Users.UpdateUser.resources
+C:\Nathan\UPC\BEAUTY\GUI\obj\Debug\GUI.Login.resources
+C:\Nathan\UPC\BEAUTY\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Nathan\UPC\BEAUTY\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Nathan\UPC\BEAUTY\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Nathan\UPC\BEAUTY\GUI\obj\Debug\GUI.csproj.CopyComplete
+C:\Nathan\UPC\BEAUTY\GUI\obj\Debug\GUI.exe
+C:\Nathan\UPC\BEAUTY\GUI\obj\Debug\GUI.pdb
+C:\Nathan\UPC\BEAUTY\GUI\obj\Debug\GUI.Forms.Users.UserHome.resources
+C:\Users\natha\Desktop\Proyectos\BEAUTY\GUI\obj\Debug\GUI.Forms.Users.UserHome.resources

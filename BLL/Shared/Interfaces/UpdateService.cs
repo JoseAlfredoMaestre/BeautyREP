@@ -5,9 +5,9 @@ using Entities.Shared;
 
 namespace BLL.Shared.Interfaces
 {
-    public interface IUpdateService<T> : IService where T : IUpdateEntity
+    public interface IUpdateService<in T> : IService where T : IUpdateEntity
     {
 
-        Response<T> Update(T entity, long id);
+        Response<bool> Update(T entity);
     }
 }

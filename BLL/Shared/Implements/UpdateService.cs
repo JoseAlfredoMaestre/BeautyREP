@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using BLL.Shared.Interfaces;
+using DAL;
 using Entities.Interfaces;
 using Entities.Shared;
 
@@ -22,32 +23,23 @@ public class UpdateService<T> : IUpdateService<T> where T : IUpdateEntity
 
     }
 
+    private IUpdateRepository<T> Repository { get; set; }
 
-    private HashSet<T> Repository { get; set; }
-
-    public UpdateService<T> withRepository(HashSet<T> repository)
+    public UpdateService<T> withRepository(IUpdateRepository<T> repository)
     {
         Repository = repository;
         return this;
     }
 
-    public Response<T> Update(T entity, long id)
+    public Response<bool> Update(T entity)
     {
         try
         {
-            T old = default;
-            foreach (var item in Repository.Where(item => item.Id == id))
-            {
-                old = item;
-                Repository.Remove(item);
-            }
-
-            Repository.Add(entity);
-            return new ResponseBuilder<T>().WithData(old).WithSuccess(true);
+            return Repository.Update(entity);
         }
         catch (Exception e)
         {
-            return ResponseBuilder<T>.Error(e);
+            return ResponseBuilder<bool>.Error(e);
         }
     }
 }

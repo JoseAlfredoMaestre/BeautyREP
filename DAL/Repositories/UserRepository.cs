@@ -7,7 +7,7 @@ using Entities.Shared;
 
 namespace DAL.Repositories
 {
-    public class UserRepository
+    public class UserRepository : IRepository<User>
 {
     private DatabaseConnection _dbConnection;
 
@@ -48,27 +48,48 @@ namespace DAL.Repositories
             return ResponseBuilder<bool>.Error(ex);
         }
     }
-
     public Response<User> GetById(long id)
     {
         try
         {
             _dbConnection.OpenConnection();
+            string query = "SELECT Id, IdentityCard, Names, Surnames, Phone, Email, CreateAt FROM Users WHERE Id = @Id";
+            using (SqlCommand command = new SqlCommand(query, _dbConnection.GetConnection()))
+            {
+                command.Parameters.AddWithValue("@Id", id);
 
-            // Aquí iría el código para leer el usuario de la base de datos.
-            // Por ejemplo, podrías usar un SqlCommand para ejecutar una sentencia SELECT.
-
-            _dbConnection.CloseConnection();
-
-            // Deberías retornar el usuario leído de la base de datos.
-            // He puesto null como valor por defecto porque este es solo un ejemplo.
-            return ResponseBuilder<User>.Success(null);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        User user = new User(
+                            reader.GetInt64(0), // Id
+                            reader.GetString(1), // IdentityCard
+                            reader.GetString(2), // Names
+                            reader.GetString(3), // Surnames
+                            reader.GetString(4), // Phone
+                            reader.GetString(5), // Email
+                            reader.GetDateTime(6)  // CreateAt
+                        );
+                        return new ResponseBuilder<User>().WithData(user);
+                    }
+                    else
+                    {
+                        return ResponseBuilder<User>.Fail("Usuario no encontrado");
+                    }
+                }
+            }
         }
         catch (SqlException ex)
         {
             return ResponseBuilder<User>.Error(ex);
         }
+        finally
+        {
+            _dbConnection.CloseConnection();
+        }
     }
+
     public Response<HashSet<User>> GetAll()
     {
         try
@@ -88,11 +109,9 @@ namespace DAL.Repositories
                         User user = new User();
                         user.Id = reader.GetInt64(0);
                         user.Names = reader.GetString(1);
-                        user.Surnames = reader.IsDBNull(2) ? null : reader.GetString(2);
+                        user.Surnames = reader.GetString(2);
                         user.Phone = reader.GetString(3);
                         user.Email = reader.GetString(4);
-                        user.Username = reader.IsDBNull(5) ? null : reader.GetString(5);
-                        user.Password = reader.IsDBNull(6) ? null : reader.GetString(6);
                         user.CreateAt = reader.GetDateTime(7);
                         users.Add(user);
                     }
@@ -115,18 +134,51 @@ namespace DAL.Repositories
         {
             _dbConnection.OpenConnection();
 
-            // Aquí iría el código para actualizar el usuario en la base de datos.
-            // Por ejemplo, podrías usar un SqlCommand para ejecutar una sentencia UPDATE.
+            string query = @"UPDATE Users 
+                         SET IdentityCard = @IdentityCard,
+                             Names = @Names,
+                             Surnames = @Surnames,
+                             Phone = @Phone,
+                             Email = @Email,
+                             Username = @Username,
+                             Password = @Password,
+                             CreateAt = @CreateAt
+                         WHERE Id = @Id";
 
-            _dbConnection.CloseConnection();
+            using (SqlCommand command = new SqlCommand(query, _dbConnection.GetConnection()))
+            {
+                command.Parameters.AddWithValue("@Id", user.Id);
+                command.Parameters.AddWithValue("@IdentityCard", user.IdentityCard);
+                command.Parameters.AddWithValue("@Names", user.Names);
+                command.Parameters.AddWithValue("@Surnames", user.Surnames);
+                command.Parameters.AddWithValue("@Phone", user.Phone);
+                command.Parameters.AddWithValue("@Email", user.Email);
+                command.Parameters.AddWithValue("@Username", user.Username ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@Password", user.Password ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@CreateAt", user.CreateAt);
 
-            return ResponseBuilder<bool>.Success();
+                int rowsAffected = command.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    return new ResponseBuilder<bool>().WithData(true);
+                }
+                else
+                {
+                    return ResponseBuilder<bool>.Fail("No se ha modificado el usuario");
+                }
+            }
         }
         catch (SqlException ex)
         {
             return ResponseBuilder<bool>.Error(ex);
         }
+        finally
+        {
+            _dbConnection.CloseConnection();
+        }
     }
+
 
     public Response<bool> Delete(long id)
     {
@@ -134,18 +186,33 @@ namespace DAL.Repositories
         {
             _dbConnection.OpenConnection();
 
-            // Aquí iría el código para eliminar el usuario de la base de datos.
-            // Por ejemplo, podrías usar un SqlCommand para ejecutar una sentencia DELETE.
+            string query = "DELETE FROM Users WHERE Id = @Id";
+            using (SqlCommand command = new SqlCommand(query, _dbConnection.GetConnection()))
+            {
+                command.Parameters.AddWithValue("@Id", id);
 
-            _dbConnection.CloseConnection();
+                int rowsAffected = command.ExecuteNonQuery();
 
-            return ResponseBuilder<bool>.Success();
+                if (rowsAffected > 0)
+                {
+                    return new ResponseBuilder<bool>().WithData(true);
+                }
+                else
+                {
+                    return ResponseBuilder<bool>.Fail("No se han eliminado usuarios");
+                }
+            }
         }
         catch (SqlException ex)
         {
             return ResponseBuilder<bool>.Error(ex);
         }
+        finally
+        {
+            _dbConnection.CloseConnection();
+        }
     }
+
 }
 
 }

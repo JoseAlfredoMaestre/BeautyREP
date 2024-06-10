@@ -25,13 +25,12 @@ namespace GUI
 
             UserRepository userRepository = new UserRepository();
 
-            //Console.WriteLine(userRepository.Insert(newUser).Msg);
+            Console.WriteLine(userRepository.Insert(newUser).Msg);
 
             foreach (var user in userRepository.GetAll().Data)
             {
                 Console.WriteLine(user.Names);
             }
-            Console.ReadKey();
         }
     }
 }

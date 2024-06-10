@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using BLL.Shared.Interfaces;
+using DAL;
 using Entities.Interfaces;
 using Entities.Shared;
 
@@ -20,22 +21,23 @@ public class DeleteService<T> : IDeleteService<T> where T : IDeleteEntity
     {
 
     }
-    private HashSet<T> Repository { get; set; }
+    private IDeleteRepository<T> Repository { get; set; }
 
-    public DeleteService<T> withRepository(HashSet<T> repository)
+    public DeleteService<T> withRepository(IDeleteRepository<T> repository)
     {
         Repository = repository;
         return this;
     }
 
-    public Response<T> Delete(long id)
+    public Response<T> Delete(params long[] ids)
     {
         try
         {
-            var item = Repository.FirstOrDefault(item => item.Id == id);
-            if (item == null) return ResponseBuilder<T>.Fail("No se ha encontrado el id del item a eliminar");
-            var success = Repository.Remove(item);
-            return new ResponseBuilder<T>().WithSuccess(success).WithData(item);
+            foreach (var id in ids)
+            {
+                Repository.Delete(id);
+            }
+            return new ResponseBuilder<T>().WithSuccess(true);
         }
         catch (Exception e)
         {

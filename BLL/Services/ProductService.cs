@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using BLL.Shared.Implements;
 using BLL.Shared.Interfaces;
+using DAL.Repositories;
 using Entities.Models;
 using Entities.Shared;
 
@@ -13,16 +14,16 @@ public class ProductService : ICrudService<Product>
 
     public static ProductService GetInstance()
     {
-        if (_instance == null) _instance = new ProductService(new HashSet<Product>());
+        if (_instance == null) _instance = new ProductService(new ProductRepository());
         return _instance;
     }
 
-    private ProductService(HashSet<Product> repository)
+    private ProductService(ProductRepository repository)
     {
         _repository = repository;
     }
 
-    private HashSet<Product> _repository;
+    private ProductRepository _repository;
 
     public Response<Product> Save(params Product[] entity)
     {
@@ -42,15 +43,15 @@ public class ProductService : ICrudService<Product>
         return service.GetById(id);
     }
 
-    public Response<Product> Update(Product entity, long id)
+    public Response<bool> Update(Product entity)
     {
         var service = UpdateService<Product>.GetInstance().withRepository(_repository);
-        return service.Update(entity, id);
+        return service.Update(entity);
     }
 
-    public Response<Product> Delete(long id)
+    public Response<Product> Delete(params long[] ids)
     {
         var service = DeleteService<Product>.GetInstance().withRepository(_repository);
-        return service.Delete(id);
+        return service.Delete(ids);
     }
 }

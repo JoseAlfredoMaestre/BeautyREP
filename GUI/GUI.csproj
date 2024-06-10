@@ -13,6 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,29 +52,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Home.cs">
+    <Compile Include="Forms\admins\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Home.Designer.cs">
+    <Compile Include="Forms\admins\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Users\CreateUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Users\CreateUser.Designer.cs">
+    <Compile Include="Forms\admins\Users\CreateUser.cs" />
+    <Compile Include="Forms\admins\Users\CreateUser.Designer.cs">
       <DependentUpon>CreateUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Users\DeleteUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Users\DeleteUser.Designer.cs">
+    <Compile Include="Forms\admins\Users\DeleteUser.cs" />
+    <Compile Include="Forms\admins\Users\DeleteUser.Designer.cs">
       <DependentUpon>DeleteUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Users\UpdateUser.cs">
+    <Compile Include="Forms\admins\Users\UpdateUser.cs" />
+    <Compile Include="Forms\admins\Users\UpdateUser.Designer.cs">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\UserHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Users\UpdateUser.Designer.cs">
-      <DependentUpon>UpdateUser.cs</DependentUpon>
+    <Compile Include="Forms\Users\UserHome.Designer.cs">
+      <DependentUpon>UserHome.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -83,17 +84,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Home.resx">
+    <EmbeddedResource Include="Forms\admins\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Users\CreateUser.resx">
+    <EmbeddedResource Include="Forms\admins\Users\CreateUser.resx">
       <DependentUpon>CreateUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Users\DeleteUser.resx">
+    <EmbeddedResource Include="Forms\admins\Users\DeleteUser.resx">
       <DependentUpon>DeleteUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Users\UpdateUser.resx">
+    <EmbeddedResource Include="Forms\admins\Users\UpdateUser.resx">
       <DependentUpon>UpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\UserHome.resx">
+      <DependentUpon>UserHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
