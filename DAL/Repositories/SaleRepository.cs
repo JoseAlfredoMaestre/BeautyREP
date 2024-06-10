@@ -22,6 +22,20 @@ namespace DAL.Repositories
             {
                 _dbConnection.OpenConnection();
 
+                // Insert sale location
+                var saleLocationQuery =
+                    "INSERT INTO SaleLocations (Address, CityId, CreateAt) OUTPUT INSERTED.Id VALUES (@Address, @CityId, @CreateAt);";
+
+                using (var locationCommand = new SqlCommand(saleLocationQuery, _dbConnection.GetConnection()))
+                {
+                    locationCommand.Parameters.AddWithValue("@Address", sale.Location.Address);
+                    locationCommand.Parameters.AddWithValue("@CityId", sale.Location.City.Id);
+                    locationCommand.Parameters.AddWithValue("@CreateAt", sale.Location.CreateAt);
+
+                    var locationId = Convert.ToInt64(locationCommand.ExecuteScalar());
+                    sale.Location.Id = locationId;
+                }
+
                 var query =
                     "INSERT INTO Sales (Discount, CreateAt, LocationsId, StatusId) VALUES (@Discount, @CreateAt, @LocationsId, @StatusId); SELECT SCOPE_IDENTITY();";
 
@@ -51,6 +65,7 @@ namespace DAL.Repositories
                 return ResponseBuilder<bool>.Error(ex);
             }
         }
+
 
 // Método privado para insertar detalles de venta
         private void InsertSaleDetail(SaleDetail saleDetail)

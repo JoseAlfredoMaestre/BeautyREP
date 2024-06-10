@@ -48,6 +48,7 @@
         <Compile Include="Services\ProductService.cs" />
         <Compile Include="Services\SaleService.cs" />
         <Compile Include="Services\SaleUbicationService.cs" />
+        <Compile Include="Services\Statistics.cs" />
         <Compile Include="Services\UserService.cs" />
         <Compile Include="Shared\Implements\CreateService.cs" />
         <Compile Include="Shared\Implements\DeleteService.cs" />

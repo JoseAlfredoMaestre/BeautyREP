@@ -33,7 +33,7 @@ public class Product : ICrudEntity
     [Required(ErrorMessage = "La imagen es requerida")]
     public byte[]? Image { get; set; }
 
-    public double TotalPrice => UnitPrice - UnitPrice * Discount;
+    public double TotalPrice => UnitPrice - UnitPrice * (double.Parse(Discount.ToString())/100);
 
 
     public Product()

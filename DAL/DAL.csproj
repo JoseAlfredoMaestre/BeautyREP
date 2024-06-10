@@ -48,6 +48,7 @@
         <Compile Include="Repositories\SaleLocationRepository.cs" />
         <Compile Include="Repositories\SaleRepository.cs" />
         <Compile Include="Repositories\SaleStatusRepository.cs" />
+        <Compile Include="Repositories\StatsRepository.cs" />
         <Compile Include="Repositories\UserRepository.cs" />
     </ItemGroup>
     <ItemGroup>

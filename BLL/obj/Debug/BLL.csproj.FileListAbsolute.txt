@@ -31,3 +31,14 @@ C:\Nathan\UPC\BEAUTY\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 C:\Nathan\UPC\BEAUTY\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Nathan\UPC\BEAUTY\BLL\obj\Debug\BLL.dll
 C:\Nathan\UPC\BEAUTY\BLL\obj\Debug\BLL.pdb
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\BLL\bin\Debug\BLL.dll
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\BLL\bin\Debug\BLL.pdb
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\BLL\bin\Debug\DAL.dll
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\BLL\bin\Debug\Entities.dll
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\BLL\bin\Debug\DAL.pdb
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\BLL\bin\Debug\Entities.pdb
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\BLL\obj\Debug\BLL.dll
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\BLL\obj\Debug\BLL.pdb

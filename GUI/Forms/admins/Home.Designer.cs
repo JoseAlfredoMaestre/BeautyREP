@@ -38,7 +38,6 @@
             this.agregarUsuarioBtn = new MaterialSkin.Controls.MaterialButton();
             this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.actualizarCiudadBtn = new MaterialSkin.Controls.MaterialButton();
             this.eliminarCiudadBtn = new MaterialSkin.Controls.MaterialButton();
             this.agregarCiudadBtn = new MaterialSkin.Controls.MaterialButton();
@@ -58,6 +57,7 @@
             this.createSaleBtn = new MaterialSkin.Controls.MaterialButton();
             this.salesListView = new MaterialSkin.Controls.MaterialListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -104,7 +104,7 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(23, 19);
+            this.materialLabel1.Location = new System.Drawing.Point(38, 17);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(63, 19);
@@ -179,7 +179,7 @@
             this.materialListView1.Depth = 0;
             this.materialListView1.FullRowSelect = true;
             this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(6, 60);
+            this.materialListView1.Location = new System.Drawing.Point(21, 58);
             this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
@@ -206,18 +206,6 @@
             this.tabPage2.Text = "Ciudades";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(35, 19);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(67, 19);
-            this.materialLabel2.TabIndex = 9;
-            this.materialLabel2.Text = "Ciudades";
-            // 
             // actualizarCiudadBtn
             // 
             this.actualizarCiudadBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -225,7 +213,7 @@
             this.actualizarCiudadBtn.Depth = 0;
             this.actualizarCiudadBtn.HighEmphasis = true;
             this.actualizarCiudadBtn.Icon = null;
-            this.actualizarCiudadBtn.Location = new System.Drawing.Point(549, 556);
+            this.actualizarCiudadBtn.Location = new System.Drawing.Point(496, 556);
             this.actualizarCiudadBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.actualizarCiudadBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.actualizarCiudadBtn.Name = "actualizarCiudadBtn";
@@ -245,7 +233,7 @@
             this.eliminarCiudadBtn.Depth = 0;
             this.eliminarCiudadBtn.HighEmphasis = true;
             this.eliminarCiudadBtn.Icon = null;
-            this.eliminarCiudadBtn.Location = new System.Drawing.Point(305, 556);
+            this.eliminarCiudadBtn.Location = new System.Drawing.Point(257, 556);
             this.eliminarCiudadBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.eliminarCiudadBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.eliminarCiudadBtn.Name = "eliminarCiudadBtn";
@@ -265,7 +253,7 @@
             this.agregarCiudadBtn.Depth = 0;
             this.agregarCiudadBtn.HighEmphasis = true;
             this.agregarCiudadBtn.Icon = null;
-            this.agregarCiudadBtn.Location = new System.Drawing.Point(56, 556);
+            this.agregarCiudadBtn.Location = new System.Drawing.Point(18, 556);
             this.agregarCiudadBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.agregarCiudadBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.agregarCiudadBtn.Name = "agregarCiudadBtn";
@@ -292,7 +280,7 @@
             this.ciudadesListView.MouseState = MaterialSkin.MouseState.OUT;
             this.ciudadesListView.Name = "ciudadesListView";
             this.ciudadesListView.OwnerDraw = true;
-            this.ciudadesListView.Size = new System.Drawing.Size(1231, 468);
+            this.ciudadesListView.Size = new System.Drawing.Size(1197, 468);
             this.ciudadesListView.TabIndex = 5;
             this.ciudadesListView.UseCompatibleStateImageBehavior = false;
             this.ciudadesListView.View = System.Windows.Forms.View.Details;
@@ -318,7 +306,7 @@
             // 
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel5.Location = new System.Drawing.Point(775, 111);
+            this.materialLabel5.Location = new System.Drawing.Point(923, 113);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(205, 23);
@@ -327,9 +315,9 @@
             // 
             // productImgPctrBox
             // 
-            this.productImgPctrBox.Location = new System.Drawing.Point(775, 160);
+            this.productImgPctrBox.Location = new System.Drawing.Point(838, 161);
             this.productImgPctrBox.Name = "productImgPctrBox";
-            this.productImgPctrBox.Size = new System.Drawing.Size(469, 267);
+            this.productImgPctrBox.Size = new System.Drawing.Size(321, 311);
             this.productImgPctrBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.productImgPctrBox.TabIndex = 20;
             this.productImgPctrBox.TabStop = false;
@@ -373,7 +361,7 @@
             this.eliminarProductoBtn.Depth = 0;
             this.eliminarProductoBtn.HighEmphasis = true;
             this.eliminarProductoBtn.Icon = null;
-            this.eliminarProductoBtn.Location = new System.Drawing.Point(315, 556);
+            this.eliminarProductoBtn.Location = new System.Drawing.Point(295, 556);
             this.eliminarProductoBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.eliminarProductoBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.eliminarProductoBtn.Name = "eliminarProductoBtn";
@@ -393,7 +381,7 @@
             this.agregarProductoBtn.Depth = 0;
             this.agregarProductoBtn.HighEmphasis = true;
             this.agregarProductoBtn.Icon = null;
-            this.agregarProductoBtn.Location = new System.Drawing.Point(66, 556);
+            this.agregarProductoBtn.Location = new System.Drawing.Point(28, 556);
             this.agregarProductoBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.agregarProductoBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.agregarProductoBtn.Name = "agregarProductoBtn";
@@ -460,7 +448,7 @@
             this.materialButton1.Depth = 0;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(559, 556);
+            this.materialButton1.Location = new System.Drawing.Point(480, 556);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
@@ -479,7 +467,7 @@
             this.materialButton2.Depth = 0;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(315, 556);
+            this.materialButton2.Location = new System.Drawing.Point(250, 556);
             this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
@@ -498,7 +486,7 @@
             this.createSaleBtn.Depth = 0;
             this.createSaleBtn.HighEmphasis = true;
             this.createSaleBtn.Icon = null;
-            this.createSaleBtn.Location = new System.Drawing.Point(66, 556);
+            this.createSaleBtn.Location = new System.Drawing.Point(28, 556);
             this.createSaleBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.createSaleBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.createSaleBtn.Name = "createSaleBtn";
@@ -524,7 +512,7 @@
             this.salesListView.MouseState = MaterialSkin.MouseState.OUT;
             this.salesListView.Name = "salesListView";
             this.salesListView.OwnerDraw = true;
-            this.salesListView.Size = new System.Drawing.Size(1231, 468);
+            this.salesListView.Size = new System.Drawing.Size(1155, 468);
             this.salesListView.TabIndex = 10;
             this.salesListView.UseCompatibleStateImageBehavior = false;
             this.salesListView.View = System.Windows.Forms.View.Details;
@@ -537,6 +525,18 @@
             this.imageList1.Images.SetKeyName(1, "icons8-city-buildings-50.png");
             this.imageList1.Images.SetKeyName(2, "icons8-product-50.png");
             this.imageList1.Images.SetKeyName(3, "icons8-sales-50.png");
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.Location = new System.Drawing.Point(35, 19);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(67, 19);
+            this.materialLabel2.TabIndex = 9;
+            this.materialLabel2.Text = "Ciudades";
             // 
             // Home
             // 

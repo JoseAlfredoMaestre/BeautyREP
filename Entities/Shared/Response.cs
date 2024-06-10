@@ -36,7 +36,7 @@ public class ResponseBuilder<T> : Response<T>
         return this;
     }
 
-    public ResponseBuilder<T> WithSuccess(bool success)
+    public ResponseBuilder<T> WithSuccess(bool success = true)
     {
         base.IsSuccess = success;
         return this;
