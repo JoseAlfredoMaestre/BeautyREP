@@ -33,6 +33,7 @@
             this.passwordInput = new MaterialSkin.Controls.MaterialTextBox();
             this.loginButton = new MaterialSkin.Controls.MaterialButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.signUpButton = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +71,7 @@
             this.passwordInput.AnimateReadOnly = false;
             this.passwordInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.passwordInput.Depth = 0;
-            this.passwordInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.passwordInput.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.passwordInput.Hint = "Contraseña";
             this.passwordInput.LeadingIcon = null;
             this.passwordInput.Location = new System.Drawing.Point(70, 224);
@@ -107,29 +108,55 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(406, 100);
+            this.pictureBox1.Location = new System.Drawing.Point(403, 76);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(291, 252);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // signUpButton
+            // 
+            this.signUpButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.signUpButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.signUpButton.Depth = 0;
+            this.signUpButton.HighEmphasis = true;
+            this.signUpButton.Icon = null;
+            this.signUpButton.Location = new System.Drawing.Point(479, 337);
+            this.signUpButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.signUpButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.signUpButton.Name = "signUpButton";
+            this.signUpButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.signUpButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.signUpButton.Size = new System.Drawing.Size(152, 36);
+            this.signUpButton.TabIndex = 4;
+            this.signUpButton.Text = "¡Registrate aqui!";
+            this.signUpButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.signUpButton.UseAccentColor = false;
+            this.signUpButton.UseVisualStyleBackColor = true;
+            this.signUpButton.Click += new System.EventHandler(this.signUpButton_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 424);
+            this.Controls.Add(this.signUpButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passwordInput);
             this.Controls.Add(this.usernameInput);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
+
+        private MaterialSkin.Controls.MaterialButton signUpButton;
 
         private System.Windows.Forms.PictureBox pictureBox1;
 

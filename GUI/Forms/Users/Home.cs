@@ -26,6 +26,7 @@ namespace GUI.Forms.Users
             ThemeManager.ConfigureTheme(this);
             _instance = this;
             InitializeComponent();
+            this.FormClosed += MainForm_FormClosed;
 
             SaleDetails = new();
 
@@ -87,7 +88,7 @@ namespace GUI.Forms.Users
             salesListView.Columns.Add("Identificación del cliente", 200);
 
             // Obtener el ID del usuario actual
-            var userId = AuthService.User.Id;
+            var userId = AuthService.User?.Id;
 
             // Lista de ventas del usuario actual
             var sales = SaleService.GetInstance().GetAll().Data.Where(sale => sale.User.Id == userId);
@@ -271,6 +272,29 @@ namespace GUI.Forms.Users
         {
             UserProfile userProfile = new UserProfile();
             userProfile.Show();
+        }
+
+        private void logOutBtn_Click(object sender, EventArgs e)
+        {
+            AuthService auth = new();
+            this.Dispose();
+            auth.Logout();
+            Login loginForm = new Login();
+            loginForm.Show();
+        }
+
+
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e) {
+            // Cerrar la aplicación cuando se cierre el formulario principal
+            Login login = new Login();
+            login.Close();
+            Environment.Exit(0);
+        }
+
+        private void UserHome_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

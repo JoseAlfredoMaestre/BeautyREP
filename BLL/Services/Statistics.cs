@@ -8,7 +8,10 @@ namespace BLL.Services;
 
 public class Statistics
 {
+
     private readonly StatsRepository _stats = new();
+    private static Statistics? _instance;
+    public static Statistics GetInstance() { return _instance ??= new Statistics(); }
 
     // (El dictionary es un map)
 
@@ -37,7 +40,8 @@ public class Statistics
             return ResponseBuilder<Dictionary<int, double>>.Error(ex);
         }
     }
-
+    
+    //
     // Obtiene la cantidad de ventas de todos los meses en un año en especifico, por default el año es el actual. Dictionary<Nombre del mes (string), cantidad de ventas (int)>
     public Response<Dictionary<string, int>> GetMonthlySalesCount(int? year = null)
     {
@@ -123,6 +127,7 @@ public class Statistics
         }
     }
 
+    //
     // Obtiene la cantidad de ventas por cada producto en un año en especifico, por default el año es el actual. Dictionary<Nombre del producto (string), valor de las ventas (int)>
     public Response<Dictionary<string, int>> GetAnnualProductSales(int? year = null)
     {

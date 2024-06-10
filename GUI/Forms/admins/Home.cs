@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Windows.Forms.DataVisualization.Charting;
 using BLL.Services;
 using Entities.Models;
 using GUI.Config.Theme;
@@ -15,6 +19,7 @@ using GUI.Forms.Users;
 using MaterialSkin.Controls;
 using CreateDetails = GUI.Forms.admins.Sales.CreateDetails;
 using CreateSale = GUI.Forms.admins.Sales.CreateSale;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace GUI.Forms.admins
 {
@@ -36,12 +41,16 @@ namespace GUI.Forms.admins
             this.StartPosition = FormStartPosition.CenterScreen;
 
             SaleDetails = new();
+            this.FormClosed += MainForm_FormClosed;
 
             LoadDataToUserList();
             LoadDataToCitiesList();
             LoadDataToProductsList();
             LoadDataToSalesList();
             LoadDataToSaleDetailsList();
+
+            LoadDataChartPai();
+            LoadDataChartColumn();
         }
 
         //Cargar datos a la lista de usuarios
@@ -615,6 +624,130 @@ namespace GUI.Forms.admins
         {
             UserProfile userProfile = new();
             userProfile.Show();
+        }
+
+        // Configuración de la gráfica pai
+        private void loadComboChartPai()
+        {
+            var sales = SaleService.GetInstance().GetAll().Data;
+            foreach (var item in sales)
+            {
+                if (cbYearPai.Items.Contains(item.CreateAt.Year.ToString()) == false)
+                {
+                    cbYearPai.Items.Add(item.CreateAt.Year.ToString());
+                }
+            }
+        }
+
+        private void chartPaiConfig(Dictionary<string, int> salesPerProduct)
+        {
+            chartPai.Series[0].Points.Clear();
+            chartPai.Legends[0].CustomItems.Clear();
+
+            chartPai.ForeColor = Color.White;
+            foreach (var kvp in salesPerProduct)
+            {
+                string leyenda = $"{kvp.Value} veces";
+                chartPai.Series[0].Points.AddXY(kvp.Key, kvp.Value);
+                chartPai.Series[0].Points.Last().LegendText = leyenda;
+            }
+        }
+
+        private void LoadDataChartPai()
+        {
+            try
+            {
+                loadComboChartPai();
+
+                if (cbYearPai.Text != "")
+                {
+                    chartPaiConfig(Statistics.GetInstance().GetAnnualProductSales(int.Parse(cbYearPai.Text)).Data);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error {ex.Message}");
+            }
+        }
+
+        private void cbYearPai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadDataChartPai();
+        }
+
+        // Configuración del histograma
+        private void loadComboChartColumn()
+        {
+            var sales = SaleService.GetInstance().GetAll().Data;
+            foreach (var item in sales)
+            {
+                if (cbYearColumn.Items.Contains(item.CreateAt.Year.ToString()) == false)
+                {
+                    cbYearColumn.Items.Add(item.CreateAt.Year.ToString());
+                }
+            }
+        }
+
+        private void chartColumnConfig(Dictionary<string, int> salesPerAnyMonth)
+        {
+            chartColumn.Series.Clear();
+            Series series = new Series
+            {
+                Name = "Ventas",
+                ChartType = SeriesChartType.Column
+            };
+
+            foreach (var kvp in salesPerAnyMonth.OrderBy(item => item.Key))
+            {
+                series.Points.AddXY(kvp.Key, kvp.Value);
+            }
+
+            chartColumn.Series.Add(series);
+
+
+            chartColumn.ChartAreas[0].AxisX.Interval = 1;
+            chartColumn.ChartAreas[0].AxisX.Title = "Meses";
+            chartColumn.ChartAreas[0].AxisY.Title = "# Ventas";
+        }
+
+        private void LoadDataChartColumn()
+        {
+
+            try
+            {
+                loadComboChartColumn();
+
+                if (cbYearColumn.Text != "")
+                {
+                    chartColumnConfig(Statistics.GetInstance().GetMonthlySalesCount(int.Parse(cbYearColumn.Text)).Data);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show($"Error {ex.Message}");
+            }
+        }
+
+        private void cbYearColumn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadDataChartColumn();
+        }
+
+        private void logOutBtn_Click(object sender, EventArgs e)
+        {
+            AuthService auth = new();
+            this.Dispose();
+            auth.Logout();
+            Login loginForm = new Login();
+            loginForm.Show();
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Cerrar la aplicación cuando se cierre el formulario principal
+            Application.Exit();
         }
     }
 }

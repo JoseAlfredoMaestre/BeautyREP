@@ -30,15 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.logOutBtn = new System.Windows.Forms.PictureBox();
             this.userIconBtn = new System.Windows.Forms.PictureBox();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.cleanCartBtn = new MaterialSkin.Controls.MaterialButton();
             this.createSaleBtn = new MaterialSkin.Controls.MaterialButton();
             this.saleDetailsListView = new MaterialSkin.Controls.MaterialListView();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.deleteSaleBtn = new MaterialSkin.Controls.MaterialButton();
             this.createDetailsBtn = new MaterialSkin.Controls.MaterialButton();
             this.salesListView = new MaterialSkin.Controls.MaterialListView();
@@ -63,14 +69,26 @@
             this.agregarProductoBtn = new MaterialSkin.Controls.MaterialButton();
             this.productosListView = new MaterialSkin.Controls.MaterialListView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.cbYearPai = new MaterialSkin.Controls.MaterialComboBox();
+            this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            this.cbYearColumn = new MaterialSkin.Controls.MaterialComboBox();
+            this.chartPai = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartColumn = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.materialTabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logOutBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userIconBtn)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productImgPctrBox)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPai)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartColumn)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -93,13 +111,13 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.logOutBtn);
             this.tabPage4.Controls.Add(this.userIconBtn);
             this.tabPage4.Controls.Add(this.materialLabel6);
             this.tabPage4.Controls.Add(this.cleanCartBtn);
             this.tabPage4.Controls.Add(this.createSaleBtn);
             this.tabPage4.Controls.Add(this.saleDetailsListView);
             this.tabPage4.Controls.Add(this.materialLabel3);
-            this.tabPage4.Controls.Add(this.materialButton1);
             this.tabPage4.Controls.Add(this.deleteSaleBtn);
             this.tabPage4.Controls.Add(this.createDetailsBtn);
             this.tabPage4.Controls.Add(this.salesListView);
@@ -111,11 +129,23 @@
             this.tabPage4.Text = "Ventas";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // logOutBtn
+            // 
+            this.logOutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logOutBtn.Image = ((System.Drawing.Image)(resources.GetObject("logOutBtn.Image")));
+            this.logOutBtn.Location = new System.Drawing.Point(1134, 6);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.Size = new System.Drawing.Size(46, 48);
+            this.logOutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logOutBtn.TabIndex = 20;
+            this.logOutBtn.TabStop = false;
+            this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
+            // 
             // userIconBtn
             // 
             this.userIconBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.userIconBtn.Image = ((System.Drawing.Image)(resources.GetObject("userIconBtn.Image")));
-            this.userIconBtn.Location = new System.Drawing.Point(1146, 6);
+            this.userIconBtn.Location = new System.Drawing.Point(1063, 6);
             this.userIconBtn.Name = "userIconBtn";
             this.userIconBtn.Size = new System.Drawing.Size(46, 48);
             this.userIconBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -169,7 +199,7 @@
             this.createSaleBtn.NoAccentTextColor = System.Drawing.Color.Empty;
             this.createSaleBtn.Size = new System.Drawing.Size(139, 36);
             this.createSaleBtn.TabIndex = 16;
-            this.createSaleBtn.Text = "Realizar venta";
+            this.createSaleBtn.Text = "REALIZAR VENTA";
             this.createSaleBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.createSaleBtn.UseAccentColor = false;
             this.createSaleBtn.UseVisualStyleBackColor = true;
@@ -206,25 +236,6 @@
             this.materialLabel3.TabIndex = 14;
             this.materialLabel3.Text = "Ventas";
             // 
-            // materialButton1
-            // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(480, 556);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(159, 36);
-            this.materialButton1.TabIndex = 13;
-            this.materialButton1.Text = "ACTUALIZAR VENTA";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
-            // 
             // deleteSaleBtn
             // 
             this.deleteSaleBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -232,7 +243,7 @@
             this.deleteSaleBtn.Depth = 0;
             this.deleteSaleBtn.HighEmphasis = true;
             this.deleteSaleBtn.Icon = null;
-            this.deleteSaleBtn.Location = new System.Drawing.Point(250, 556);
+            this.deleteSaleBtn.Location = new System.Drawing.Point(330, 556);
             this.deleteSaleBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.deleteSaleBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.deleteSaleBtn.Name = "deleteSaleBtn";
@@ -257,9 +268,9 @@
             this.createDetailsBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.createDetailsBtn.Name = "createDetailsBtn";
             this.createDetailsBtn.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.createDetailsBtn.Size = new System.Drawing.Size(138, 36);
+            this.createDetailsBtn.Size = new System.Drawing.Size(263, 36);
             this.createDetailsBtn.TabIndex = 11;
-            this.createDetailsBtn.Text = "AGREGAR VENTA";
+            this.createDetailsBtn.Text = "AGREGAR PRODUCTOS AL CARRITO";
             this.createDetailsBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.createDetailsBtn.UseAccentColor = false;
             this.createDetailsBtn.UseVisualStyleBackColor = true;
@@ -629,6 +640,14 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.cbYearPai);
+            this.tabPage5.Controls.Add(this.materialLabel10);
+            this.tabPage5.Controls.Add(this.materialLabel9);
+            this.tabPage5.Controls.Add(this.materialLabel8);
+            this.tabPage5.Controls.Add(this.materialLabel7);
+            this.tabPage5.Controls.Add(this.cbYearColumn);
+            this.tabPage5.Controls.Add(this.chartPai);
+            this.tabPage5.Controls.Add(this.chartColumn);
             this.tabPage5.ImageKey = "icons8-sales-50.png";
             this.tabPage5.Location = new System.Drawing.Point(4, 39);
             this.tabPage5.Name = "tabPage5";
@@ -636,6 +655,133 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Estadisticas";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // cbYearPai
+            // 
+            this.cbYearPai.AutoResize = false;
+            this.cbYearPai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbYearPai.Depth = 0;
+            this.cbYearPai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbYearPai.DropDownHeight = 174;
+            this.cbYearPai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbYearPai.DropDownWidth = 121;
+            this.cbYearPai.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbYearPai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbYearPai.FormattingEnabled = true;
+            this.cbYearPai.IntegralHeight = false;
+            this.cbYearPai.ItemHeight = 43;
+            this.cbYearPai.Location = new System.Drawing.Point(713, 43);
+            this.cbYearPai.MaxDropDownItems = 4;
+            this.cbYearPai.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbYearPai.Name = "cbYearPai";
+            this.cbYearPai.Size = new System.Drawing.Size(121, 49);
+            this.cbYearPai.StartIndex = 0;
+            this.cbYearPai.TabIndex = 9;
+            this.cbYearPai.SelectedIndexChanged += new System.EventHandler(this.cbYearPai_SelectedIndexChanged);
+            // 
+            // materialLabel10
+            // 
+            this.materialLabel10.AutoSize = true;
+            this.materialLabel10.Depth = 0;
+            this.materialLabel10.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel10.Location = new System.Drawing.Point(609, 11);
+            this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel10.Name = "materialLabel10";
+            this.materialLabel10.Size = new System.Drawing.Size(445, 19);
+            this.materialLabel10.TabIndex = 8;
+            this.materialLabel10.Text = " Cantidad de ventas por cada producto en un año en especifico";
+            // 
+            // materialLabel9
+            // 
+            this.materialLabel9.AutoSize = true;
+            this.materialLabel9.Depth = 0;
+            this.materialLabel9.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel9.Location = new System.Drawing.Point(553, 57);
+            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel9.Name = "materialLabel9";
+            this.materialLabel9.Size = new System.Drawing.Size(134, 19);
+            this.materialLabel9.TabIndex = 7;
+            this.materialLabel9.Text = "Seleccione un año:";
+            // 
+            // materialLabel8
+            // 
+            this.materialLabel8.AutoSize = true;
+            this.materialLabel8.Depth = 0;
+            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel8.Location = new System.Drawing.Point(14, 11);
+            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel8.Name = "materialLabel8";
+            this.materialLabel8.Size = new System.Drawing.Size(448, 19);
+            this.materialLabel8.TabIndex = 6;
+            this.materialLabel8.Text = "Cantidad de ventas de todos los meses en un año en especifico";
+            // 
+            // materialLabel7
+            // 
+            this.materialLabel7.AutoSize = true;
+            this.materialLabel7.Depth = 0;
+            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel7.Location = new System.Drawing.Point(14, 57);
+            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel7.Name = "materialLabel7";
+            this.materialLabel7.Size = new System.Drawing.Size(134, 19);
+            this.materialLabel7.TabIndex = 5;
+            this.materialLabel7.Text = "Seleccione un año:";
+            // 
+            // cbYearColumn
+            // 
+            this.cbYearColumn.AutoResize = false;
+            this.cbYearColumn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbYearColumn.Depth = 0;
+            this.cbYearColumn.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbYearColumn.DropDownHeight = 174;
+            this.cbYearColumn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbYearColumn.DropDownWidth = 121;
+            this.cbYearColumn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbYearColumn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbYearColumn.FormattingEnabled = true;
+            this.cbYearColumn.IntegralHeight = false;
+            this.cbYearColumn.ItemHeight = 43;
+            this.cbYearColumn.Location = new System.Drawing.Point(186, 43);
+            this.cbYearColumn.MaxDropDownItems = 4;
+            this.cbYearColumn.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbYearColumn.Name = "cbYearColumn";
+            this.cbYearColumn.Size = new System.Drawing.Size(121, 49);
+            this.cbYearColumn.StartIndex = 0;
+            this.cbYearColumn.TabIndex = 4;
+            this.cbYearColumn.SelectedIndexChanged += new System.EventHandler(this.cbYearColumn_SelectedIndexChanged);
+            // 
+            // chartPai
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartPai.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartPai.Legends.Add(legend1);
+            this.chartPai.Location = new System.Drawing.Point(645, 104);
+            this.chartPai.Name = "chartPai";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartPai.Series.Add(series1);
+            this.chartPai.Size = new System.Drawing.Size(349, 300);
+            this.chartPai.TabIndex = 1;
+            this.chartPai.Text = "chart2";
+            // 
+            // chartColumn
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chartColumn.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartColumn.Legends.Add(legend2);
+            this.chartColumn.Location = new System.Drawing.Point(17, 104);
+            this.chartColumn.Name = "chartColumn";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartColumn.Series.Add(series2);
+            this.chartColumn.Size = new System.Drawing.Size(515, 300);
+            this.chartColumn.TabIndex = 0;
+            this.chartColumn.Text = "chart1";
             // 
             // imageList1
             // 
@@ -656,12 +802,14 @@
             this.Controls.Add(this.materialTabControl1);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.materialTabControl1;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Beauty";
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logOutBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userIconBtn)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -670,8 +818,14 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productImgPctrBox)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartColumn)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.PictureBox logOutBtn;
 
         private System.Windows.Forms.PictureBox userIconBtn;
 
@@ -693,7 +847,6 @@
         private MaterialSkin.Controls.MaterialListView productosListView;
 
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialButton deleteSaleBtn;
         private MaterialSkin.Controls.MaterialButton createDetailsBtn;
         private MaterialSkin.Controls.MaterialListView salesListView;
@@ -717,5 +870,13 @@
         private MaterialSkin.Controls.MaterialButton actualizarUsuarioBtn;
         private MaterialSkin.Controls.MaterialButton eliminarUsuarrioBtn;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialComboBox cbYearColumn;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartPai;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartColumn;
+        private MaterialSkin.Controls.MaterialComboBox cbYearPai;
+        private MaterialSkin.Controls.MaterialLabel materialLabel10;
+        private MaterialSkin.Controls.MaterialLabel materialLabel9;
+        private MaterialSkin.Controls.MaterialLabel materialLabel8;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateUser));
             this.nameInput = new MaterialSkin.Controls.MaterialTextBox2();
             this.surnamesInput = new MaterialSkin.Controls.MaterialTextBox2();
             this.phoneInput = new MaterialSkin.Controls.MaterialTextBox2();
@@ -274,10 +275,12 @@
             this.Controls.Add(this.phoneInput);
             this.Controls.Add(this.surnamesInput);
             this.Controls.Add(this.nameInput);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateUser";
             this.Text = "Crear Usuario";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private MaterialSkin.Controls.MaterialTextBox2 cedulaInput;

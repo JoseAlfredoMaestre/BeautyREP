@@ -144,7 +144,7 @@
             this.createSaleBtn.NoAccentTextColor = System.Drawing.Color.Empty;
             this.createSaleBtn.Size = new System.Drawing.Size(139, 36);
             this.createSaleBtn.TabIndex = 16;
-            this.createSaleBtn.Text = "Realizar venta";
+            this.createSaleBtn.Text = "Realizar Compra";
             this.createSaleBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.createSaleBtn.UseAccentColor = false;
             this.createSaleBtn.UseVisualStyleBackColor = true;
@@ -317,6 +317,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.productImgPctrBox)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.PictureBox logOutBtn;
 
         private System.Windows.Forms.PictureBox userIconBtn;
 

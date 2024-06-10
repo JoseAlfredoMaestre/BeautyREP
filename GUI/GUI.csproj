@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>BeautyLogo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.2.2.3.1\lib\net461\MaterialSkin.dll</HintPath>
@@ -46,6 +49,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\Theme\ThemeManager.cs" />
+    <Compile Include="SignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUp.Designer.cs">
+      <DependentUpon>SignUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\admins\Cities\CreateCity.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,15 +134,21 @@
     <Compile Include="Forms\admins\UserProfile.Designer.cs">
       <DependentUpon>UserProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\admins\Users\CreateUser.cs" />
+    <Compile Include="Forms\admins\Users\CreateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\admins\Users\CreateUser.Designer.cs">
       <DependentUpon>CreateUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\admins\Users\DeleteUser.cs" />
+    <Compile Include="Forms\admins\Users\DeleteUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\admins\Users\DeleteUser.Designer.cs">
       <DependentUpon>DeleteUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\admins\Users\UpdateUser.cs" />
+    <Compile Include="Forms\admins\Users\UpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\admins\Users\UpdateUser.Designer.cs">
       <DependentUpon>UpdateUser.cs</DependentUpon>
     </Compile>
@@ -168,6 +184,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="SignUp.resx">
+      <DependentUpon>SignUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\admins\Cities\CreateCity.resx">
       <DependentUpon>CreateCity.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,6 +284,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\admins\Stats\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BeautyLogo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

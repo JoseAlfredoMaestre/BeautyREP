@@ -29,4 +29,9 @@ public class AuthService
             return ResponseBuilder<string>.Error(e);
         }
     }
+
+    public void Logout()
+    {
+        User = null;
+    }
 }

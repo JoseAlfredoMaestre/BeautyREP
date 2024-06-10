@@ -42,3 +42,25 @@ C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEA
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\BLL\obj\Debug\BLL.dll
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\BLL\obj\Debug\BLL.pdb
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\BLL\bin\Debug\BLL.dll
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\BLL\bin\Debug\BLL.pdb
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\BLL\bin\Debug\DAL.dll
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\BLL\bin\Debug\Entities.dll
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\BLL\bin\Debug\DAL.pdb
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\BLL\bin\Debug\Entities.pdb
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\BLL\obj\Debug\BLL.dll
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\BLL\obj\Debug\BLL.pdb
+C:\Nathan\BEAUTY\BLL\bin\Debug\BLL.dll
+C:\Nathan\BEAUTY\BLL\bin\Debug\BLL.pdb
+C:\Nathan\BEAUTY\BLL\bin\Debug\DAL.dll
+C:\Nathan\BEAUTY\BLL\bin\Debug\Entities.dll
+C:\Nathan\BEAUTY\BLL\bin\Debug\DAL.pdb
+C:\Nathan\BEAUTY\BLL\bin\Debug\Entities.pdb
+C:\Nathan\BEAUTY\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Nathan\BEAUTY\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Nathan\BEAUTY\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Nathan\BEAUTY\BLL\obj\Debug\BLL.dll
+C:\Nathan\BEAUTY\BLL\obj\Debug\BLL.pdb

@@ -49,5 +49,11 @@ namespace GUI
                 MessageBox.Show(response.Msg);
             }
         }
+
+        private void signUpButton_Click(object sender, EventArgs e)
+        {
+            SignUp signUp = new();
+            signUp.Show();
+        }
     }
 }

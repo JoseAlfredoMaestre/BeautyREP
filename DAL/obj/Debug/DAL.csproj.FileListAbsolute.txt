@@ -34,3 +34,21 @@ C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEA
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\DAL\obj\Debug\DAL.dll
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\DAL\obj\Debug\DAL.pdb
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\DAL\bin\Debug\DAL.dll
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\DAL\bin\Debug\DAL.pdb
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\DAL\bin\Debug\Entities.dll
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\DAL\bin\Debug\Entities.pdb
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\DAL\obj\Debug\DAL.dll
+C:\Users\diego\OneDrive\Documentos\AyudaBeauty\BEAUTY\DAL\obj\Debug\DAL.pdb
+C:\Nathan\BEAUTY\DAL\bin\Debug\DAL.dll
+C:\Nathan\BEAUTY\DAL\bin\Debug\DAL.pdb
+C:\Nathan\BEAUTY\DAL\bin\Debug\Entities.dll
+C:\Nathan\BEAUTY\DAL\bin\Debug\Entities.pdb
+C:\Nathan\BEAUTY\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Nathan\BEAUTY\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Nathan\BEAUTY\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Nathan\BEAUTY\DAL\obj\Debug\DAL.dll
+C:\Nathan\BEAUTY\DAL\obj\Debug\DAL.pdb
