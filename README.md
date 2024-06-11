@@ -1,6 +1,7 @@
 # Beauty - Desktop App for beauty products
 
-<img src="https://github.com/Aisaac123/BEAUTY/assets/105754395/e3969132-5361-4892-a662-3abdc3097a7b" alt="Texto alternativo" width="200" height="200">
+<img src="![Imagen de WhatsApp 2024-06-10 a las 20 21 20_9a1d5e9c](https://github.com/JoseAlfredoMaestre/BeautyREP/assets/153752411/2d353d72-96e9-4216-96fe-a418cad748f4)
+" width="200" height="200">
 
 ## BeautyShop
 
