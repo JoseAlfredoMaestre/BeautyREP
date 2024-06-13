@@ -27,6 +27,7 @@ namespace GUI.Forms.admins
     {
         public HashSet<SaleDetail> SaleDetails;
         private static Home _instance;
+        private bool isInactive = true;
 
         public static Home GetInstance()
         {
@@ -51,8 +52,22 @@ namespace GUI.Forms.admins
 
             LoadDataChartPai();
             LoadDataChartColumn();
+            createSaleBtn.Enabled = false;
+            cleanCartBtn.Enabled = false;
         }
 
+        public void SaleTableEnabled(bool option = true)
+        {
+            if (isInactive == option) return;
+            isInactive = option;
+            SaleDetails.Clear();
+            RefreshSaleDetailsList();
+            txtValue.Text = @"0 $";
+            salesListView.Enabled = option;
+            deleteSaleBtn.Enabled = option;
+            createSaleBtn.Enabled = !option;
+            cleanCartBtn.Enabled = !option;
+        }
         //Cargar datos a la lista de usuarios
         private void LoadDataToUserList()
         {
@@ -172,7 +187,6 @@ namespace GUI.Forms.admins
         {
             salesListView.Columns.Add("ID", 100);
             salesListView.Columns.Add("Precio Total", 100);
-            salesListView.Columns.Add("Estado", 200);
             salesListView.Columns.Add("Ciudad de entrega", 200);
             salesListView.Columns.Add("Dirección de entrega", 200);
             salesListView.Columns.Add("Fecha de creación", 200);
@@ -196,11 +210,10 @@ namespace GUI.Forms.admins
                     ListViewItem item = new ListViewItem(sale.Id.ToString());
 
                     item.SubItems.Add(sale.TotalPrice.ToString("N0"));
-                    item.SubItems.Add(sale.Status.Name);
                     item.SubItems.Add(sale.Location.City.Name);
                     item.SubItems.Add(sale.Location.Address);
                     item.SubItems.Add(sale.CreateAt.ToShortDateString());
-                    item.SubItems.Add(sale.User.Id.ToString());
+                    item.SubItems.Add(sale.User.IdentityCard);
 
                     salesListView.Items.Add(item);
                 }
@@ -210,10 +223,10 @@ namespace GUI.Forms.admins
         //Cargar datos a la lista de detalles de venta / Carrito de compra
         private void LoadDataToSaleDetailsList()
         {
-            saleDetailsListView.Columns.Add("Nombre del producto", 100);
-            saleDetailsListView.Columns.Add("Cantidad", 200);
-            saleDetailsListView.Columns.Add("Subtotal", 200);
-            saleDetailsListView.Columns.Add("Fecha de creación", 200);
+            saleDetailsListView.Columns.Add("Nombre del producto", 170);
+            saleDetailsListView.Columns.Add("Cantidad", 90);
+            saleDetailsListView.Columns.Add("Subtotal", 90);
+            saleDetailsListView.Columns.Add("Fecha de creación", 170);
 
             // Verificar si la lista de productos está vacía
             if (!SaleDetails.Any())
@@ -336,7 +349,7 @@ namespace GUI.Forms.admins
         }
 
         //Actualizar lista de detalles de la venta / carrito de compra
-        private void RefreshSaleDetailsList()
+        public void RefreshSaleDetailsList()
         {
             // Limpia la lista de detalles de la venta
             saleDetailsListView.Items.Clear();
@@ -579,8 +592,30 @@ namespace GUI.Forms.admins
 
         private void cleanCartBtn_Click(object sender, EventArgs e)
         {
+            SaleTableEnabled(true);
             SaleDetails.Clear();
-            RefreshSaleDetailsList();
+            saleDetailsListView.Clear();
+            if (salesListView.SelectedItems.Count <= 0)
+            {
+                SaleDetails.Clear();
+                RefreshSaleDetailsList();
+                txtValue.Text = @"0 $";
+                return;
+            }
+            // Obtiene el primer elemento seleccionado
+            var selectedItem = salesListView.SelectedItems[0];
+
+            // Obtiene el valor de la primera columna
+            var id = long.Parse(selectedItem.SubItems[0].Text);
+
+            // Ahora puedes usar el valor de la primera columna
+            var res = SaleService.GetInstance().GetById(id);
+            if (!res.IsSuccess) return;
+            var sale = res.Data;
+            foreach (var saleDetail in sale.SaleDetails) SaleDetails.Add(saleDetail);
+
+            LoadDataToSaleDetailsList();
+            txtValue.Text = SaleDetails.Sum(det => det.Subtotal).ToString("N0") + " $";
         }
 
         private void createSaleBtn_Click(object sender, EventArgs e)
@@ -609,10 +644,9 @@ namespace GUI.Forms.admins
 
             foreach (ListViewItem item in salesListView.SelectedItems)
             {
-                int saleId = int.Parse(item.SubItems[0].Text);
-                Sale sale = SaleService.GetInstance().GetById(saleId).Data;
+                long saleId = int.Parse(item.SubItems[0].Text);
 
-                DeleteSale deleteSale = new DeleteSale(sale);
+                DeleteSale deleteSale = new DeleteSale(saleId);
                 deleteSale.SaleDeleted += RefreshSaleList;
                 deleteSale.SaleDeleted += RefreshSaleDetailsList;
                 deleteSale.Show();
@@ -748,6 +782,34 @@ namespace GUI.Forms.admins
         {
             // Cerrar la aplicación cuando se cierre el formulario principal
             Application.Exit();
+        }
+
+        private void salesListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SaleDetails.Clear();
+            saleDetailsListView.Clear();
+            if (salesListView.SelectedItems.Count <= 0)
+            {
+                SaleDetails.Clear();
+                RefreshSaleDetailsList();
+                txtValue.Text = @"0 $";
+                return;
+            }
+            // Obtiene el primer elemento seleccionado
+            var selectedItem = salesListView.SelectedItems[0];
+
+            // Obtiene el valor de la primera columna
+            var id = long.Parse(selectedItem.SubItems[0].Text);
+
+            // Ahora puedes usar el valor de la primera columna
+            var res = SaleService.GetInstance().GetById(id);
+            if (!res.IsSuccess) return;
+            var sale = res.Data;
+            foreach (var saleDetail in sale.SaleDetails) SaleDetails.Add(saleDetail);
+
+            LoadDataToSaleDetailsList();
+            txtValue.Text = SaleDetails.Sum(det => det.Subtotal).ToString("N0") + " $";
+
         }
     }
 }

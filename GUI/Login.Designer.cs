@@ -47,7 +47,7 @@
             this.usernameInput.HideSelection = true;
             this.usernameInput.Hint = "Nombre de usuario";
             this.usernameInput.LeadingIcon = null;
-            this.usernameInput.Location = new System.Drawing.Point(70, 133);
+            this.usernameInput.Location = new System.Drawing.Point(70, 143);
             this.usernameInput.MaxLength = 32767;
             this.usernameInput.MouseState = MaterialSkin.MouseState.OUT;
             this.usernameInput.Name = "usernameInput";
@@ -71,10 +71,10 @@
             this.passwordInput.AnimateReadOnly = false;
             this.passwordInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.passwordInput.Depth = 0;
-            this.passwordInput.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.passwordInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.passwordInput.Hint = "Contraseña";
             this.passwordInput.LeadingIcon = null;
-            this.passwordInput.Location = new System.Drawing.Point(70, 224);
+            this.passwordInput.Location = new System.Drawing.Point(70, 226);
             this.passwordInput.MaxLength = 50;
             this.passwordInput.MouseState = MaterialSkin.MouseState.OUT;
             this.passwordInput.Multiline = false;
@@ -92,7 +92,7 @@
             this.loginButton.Depth = 0;
             this.loginButton.HighEmphasis = true;
             this.loginButton.Icon = null;
-            this.loginButton.Location = new System.Drawing.Point(127, 316);
+            this.loginButton.Location = new System.Drawing.Point(129, 337);
             this.loginButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.loginButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.loginButton.Name = "loginButton";
@@ -150,10 +150,10 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         private MaterialSkin.Controls.MaterialButton signUpButton;

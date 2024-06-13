@@ -12,23 +12,25 @@ namespace GUI.Forms.admins.Sales;
 public partial class DeleteSale : MaterialForm
 {
 
-    private Sale _saleToDelete;
+    private long _saleToDelete;
     public event Action SaleDeleted;
-    public DeleteSale(Sale sale)
+    public DeleteSale(long sale)
     {
         InitializeComponent();
         ThemeManager.ConfigureTheme(this);
         this._saleToDelete = sale;
         this.StartPosition = FormStartPosition.CenterScreen;
 
-        saleIdLbl.Text = sale.Id.ToString();
+        saleIdLbl.Text = sale.ToString();
     }
 
 
     private void deleteSaleYesBtn_Click(object sender, EventArgs e)
     {
-        ProductService.GetInstance().Delete(_saleToDelete.Id);
+        SaleService.GetInstance().Delete(_saleToDelete);
         SaleDeleted?.Invoke();
+        Home.GetInstance().saleDetailsListView.Clear();
+        Home.GetInstance().RefreshSaleDetailsList();
         MessageBox.Show("Venta eliminada correctamente.");
         this.Dispose();
     }

@@ -80,6 +80,8 @@ public partial class CreateSale : MaterialForm
     {
         MessageBox.Show("Venta generada correctamente", "Venta generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         Home.GetInstance().SaleDetails.Clear();
+        Home.GetInstance().SaleTableEnabled();
+        Home.GetInstance().txtValue.Text = Home.GetInstance().SaleDetails.Sum(det => det.Subtotal).ToString("N0") + " $";
         this.Dispose();
         SaleCreated?.Invoke();
     }

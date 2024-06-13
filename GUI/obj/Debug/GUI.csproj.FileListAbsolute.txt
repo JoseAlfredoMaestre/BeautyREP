@@ -101,7 +101,6 @@ C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEA
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\GUI\obj\Debug\GUI.Forms.admins.Products.DeleteProduct.resources
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\GUI\obj\Debug\GUI.Forms.admins.Products.UpdateProduct.resources
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\GUI\obj\Debug\GUI.Forms.admins.Users.CreateUser.resources
-C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\GUI\obj\Debug\GUI.Forms.Users.DeleteUser.resources
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\GUI\obj\Debug\GUI.Forms.admins.Users.UpdateUser.resources
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\GUI\obj\Debug\GUI.Forms.Users.UserHome.resources
 C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\GUI\obj\Debug\GUI.Login.resources
@@ -170,3 +169,50 @@ C:\Nathan\BEAUTY\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 C:\Nathan\BEAUTY\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Nathan\BEAUTY\GUI\obj\Debug\GUI.exe
 C:\Nathan\BEAUTY\GUI\obj\Debug\GUI.pdb
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\GUI\obj\Debug\GUI.SignUp.resources
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\GUI\obj\Debug\GUI.Forms.admins.Sales.CreateDetails.resources
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\GUI\obj\Debug\GUI.Forms.admins.Sales.CreateSale.resources
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\GUI\obj\Debug\GUI.Forms.admins.Sales.DeleteSale.resources
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\GUI\obj\Debug\GUI.Forms.admins.UserProfile.resources
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\GUI\obj\Debug\GUI.Forms.admins.Users.DeleteUser.resources
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\GUI\obj\Debug\GUI.Forms.Users.CreateDetails.resources
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\GUI\obj\Debug\GUI.Forms.Users.CreateSale.resources
+C:\Users\ISAAC\Documents\Desarrollo\Trabajo\Independiente\App de belleza\App\BEAUTY\GUI\obj\Debug\GUI.Forms.Users.UserProfile.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\bin\Debug\GUI.exe.config
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\bin\Debug\GUI.exe
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\bin\Debug\GUI.pdb
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\bin\Debug\BLL.dll
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\bin\Debug\DAL.dll
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\bin\Debug\Entities.dll
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\bin\Debug\MaterialSkin.dll
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\bin\Debug\BLL.pdb
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\bin\Debug\DAL.pdb
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\bin\Debug\Entities.pdb
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.SignUp.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Forms.admins.Cities.CreateCity.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Forms.admins.Cities.DeleteCity.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Forms.admins.Cities.UpdateCity.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Forms.admins.Home.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Forms.admins.Products.CreateProduct.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Forms.admins.Products.DeleteProduct.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Forms.admins.Products.UpdateProduct.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Forms.admins.Sales.CreateDetails.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Forms.admins.Sales.CreateSale.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Forms.admins.Sales.DeleteSale.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Forms.admins.UserProfile.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Forms.admins.Users.CreateUser.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Forms.admins.Users.DeleteUser.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Forms.admins.Users.UpdateUser.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Forms.Users.CreateDetails.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Forms.Users.CreateSale.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Forms.Users.UserHome.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Forms.Users.UserProfile.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Login.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.csproj.Up2Date
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.exe
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\GUI\obj\Debug\GUI.pdb

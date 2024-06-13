@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserHome));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.txtValue = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.logOutBtn = new System.Windows.Forms.PictureBox();
             this.userIconBtn = new System.Windows.Forms.PictureBox();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.cleanCartBtn = new MaterialSkin.Controls.MaterialButton();
@@ -48,6 +51,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.materialTabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logOutBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userIconBtn)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productImgPctrBox)).BeginInit();
@@ -70,6 +74,9 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.txtValue);
+            this.tabPage4.Controls.Add(this.materialLabel1);
+            this.tabPage4.Controls.Add(this.logOutBtn);
             this.tabPage4.Controls.Add(this.userIconBtn);
             this.tabPage4.Controls.Add(this.materialLabel6);
             this.tabPage4.Controls.Add(this.cleanCartBtn);
@@ -86,11 +93,47 @@
             this.tabPage4.Text = "Ventas";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // txtValue
+            // 
+            this.txtValue.AutoSize = true;
+            this.txtValue.Depth = 0;
+            this.txtValue.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtValue.Location = new System.Drawing.Point(733, 566);
+            this.txtValue.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtValue.Name = "txtValue";
+            this.txtValue.Size = new System.Drawing.Size(23, 19);
+            this.txtValue.TabIndex = 23;
+            this.txtValue.Text = "0 $";
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(685, 566);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(42, 19);
+            this.materialLabel1.TabIndex = 22;
+            this.materialLabel1.Text = "Valor:";
+            // 
+            // logOutBtn
+            // 
+            this.logOutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logOutBtn.Image = ((System.Drawing.Image)(resources.GetObject("logOutBtn.Image")));
+            this.logOutBtn.Location = new System.Drawing.Point(1166, 6);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.Size = new System.Drawing.Size(46, 48);
+            this.logOutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logOutBtn.TabIndex = 21;
+            this.logOutBtn.TabStop = false;
+            this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click_1);
+            // 
             // userIconBtn
             // 
             this.userIconBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.userIconBtn.Image = ((System.Drawing.Image)(resources.GetObject("userIconBtn.Image")));
-            this.userIconBtn.Location = new System.Drawing.Point(1146, 3);
+            this.userIconBtn.Location = new System.Drawing.Point(1088, 6);
             this.userIconBtn.Name = "userIconBtn";
             this.userIconBtn.Size = new System.Drawing.Size(46, 48);
             this.userIconBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -137,14 +180,14 @@
             this.createSaleBtn.Depth = 0;
             this.createSaleBtn.HighEmphasis = true;
             this.createSaleBtn.Icon = null;
-            this.createSaleBtn.Location = new System.Drawing.Point(884, 556);
+            this.createSaleBtn.Location = new System.Drawing.Point(928, 556);
             this.createSaleBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.createSaleBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.createSaleBtn.Name = "createSaleBtn";
             this.createSaleBtn.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.createSaleBtn.Size = new System.Drawing.Size(139, 36);
+            this.createSaleBtn.Size = new System.Drawing.Size(99, 36);
             this.createSaleBtn.TabIndex = 16;
-            this.createSaleBtn.Text = "Realizar Compra";
+            this.createSaleBtn.Text = "!Comprar!";
             this.createSaleBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.createSaleBtn.UseAccentColor = false;
             this.createSaleBtn.UseVisualStyleBackColor = true;
@@ -219,6 +262,7 @@
             this.salesListView.TabIndex = 10;
             this.salesListView.UseCompatibleStateImageBehavior = false;
             this.salesListView.View = System.Windows.Forms.View.Details;
+            this.salesListView.SelectedIndexChanged += new System.EventHandler(this.salesListView_SelectedIndexChanged);
             // 
             // tabPage3
             // 
@@ -311,12 +355,16 @@
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logOutBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userIconBtn)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productImgPctrBox)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        public MaterialSkin.Controls.MaterialLabel txtValue;
 
         private System.Windows.Forms.PictureBox logOutBtn;
 

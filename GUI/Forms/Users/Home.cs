@@ -15,7 +15,7 @@ namespace GUI.Forms.Users
     {
         public HashSet<SaleDetail> SaleDetails;
         private static UserHome _instance;
-
+        private bool isInactive = true;
         public static UserHome GetInstance()
         {
             return _instance ??= new UserHome();
@@ -33,8 +33,21 @@ namespace GUI.Forms.Users
             LoadDataToProductsList();
             LoadDataToSalesList();
             LoadDataToSaleDetailsList();
+            createSaleBtn.Enabled = false;
+            cleanCartBtn.Enabled = false;
         }
 
+        public void SaleTableEnabled(bool option = true)
+        {
+            if (isInactive == option) return;
+            isInactive = option;
+            SaleDetails.Clear();
+            RefreshSaleDetailsList();
+            txtValue.Text = @"0 $";
+            salesListView.Enabled = option;
+            createSaleBtn.Enabled = !option;
+            cleanCartBtn.Enabled = !option;
+        }
         //Cargar datos a la Lista de productos
         private void LoadDataToProductsList()
         {
@@ -81,7 +94,6 @@ namespace GUI.Forms.Users
         {
             salesListView.Columns.Add("ID", 100);
             salesListView.Columns.Add("Precio Total", 100);
-            salesListView.Columns.Add("Estado", 200);
             salesListView.Columns.Add("Ciudad de entrega", 200);
             salesListView.Columns.Add("Dirección de entrega", 200);
             salesListView.Columns.Add("Fecha de creación", 200);
@@ -107,11 +119,10 @@ namespace GUI.Forms.Users
                     ListViewItem item = new ListViewItem(sale.Id.ToString());
 
                     item.SubItems.Add(sale.TotalPrice.ToString("N0"));
-                    item.SubItems.Add(sale.Status.Name);
                     item.SubItems.Add(sale.Location.City.Name);
                     item.SubItems.Add(sale.Location.Address);
                     item.SubItems.Add(sale.CreateAt.ToShortDateString());
-                    item.SubItems.Add(sale.User.Id.ToString());
+                    item.SubItems.Add(sale.User.IdentityCard);
 
                     salesListView.Items.Add(item);
                 }
@@ -121,10 +132,10 @@ namespace GUI.Forms.Users
         //Cargar datos a la lista de detalles de venta / Carrito de compra
         private void LoadDataToSaleDetailsList()
         {
-            saleDetailsListView.Columns.Add("Nombre del producto", 100);
-            saleDetailsListView.Columns.Add("Cantidad", 200);
-            saleDetailsListView.Columns.Add("Subtotal", 200);
-            saleDetailsListView.Columns.Add("Fecha de creación", 200);
+            saleDetailsListView.Columns.Add("Nombre del producto", 170);
+            saleDetailsListView.Columns.Add("Cantidad", 90);
+            saleDetailsListView.Columns.Add("Subtotal", 90);
+            saleDetailsListView.Columns.Add("Fecha de creación", 170);
 
             // Verificar si la lista de productos está vacía
             if (!SaleDetails.Any())
@@ -247,8 +258,30 @@ namespace GUI.Forms.Users
 
         private void cleanCartBtn_Click(object sender, EventArgs e)
         {
+            SaleTableEnabled(true);
             SaleDetails.Clear();
-            RefreshSaleDetailsList();
+            saleDetailsListView.Clear();
+            if (salesListView.SelectedItems.Count <= 0)
+            {
+                SaleDetails.Clear();
+                RefreshSaleDetailsList();
+                txtValue.Text = @"0 $";
+                return;
+            }
+            // Obtiene el primer elemento seleccionado
+            var selectedItem = salesListView.SelectedItems[0];
+
+            // Obtiene el valor de la primera columna
+            var id = long.Parse(selectedItem.SubItems[0].Text);
+
+            // Ahora puedes usar el valor de la primera columna
+            var res = SaleService.GetInstance().GetById(id);
+            if (!res.IsSuccess) return;
+            var sale = res.Data;
+            foreach (var saleDetail in sale.SaleDetails) SaleDetails.Add(saleDetail);
+
+            LoadDataToSaleDetailsList();
+            txtValue.Text = SaleDetails.Sum(det => det.Subtotal).ToString("N0") + " $";
         }
 
         private void createSaleBtn_Click(object sender, EventArgs e)
@@ -274,14 +307,6 @@ namespace GUI.Forms.Users
             userProfile.Show();
         }
 
-        private void logOutBtn_Click(object sender, EventArgs e)
-        {
-            AuthService auth = new();
-            this.Dispose();
-            auth.Logout();
-            Login loginForm = new Login();
-            loginForm.Show();
-        }
 
 
 
@@ -295,6 +320,43 @@ namespace GUI.Forms.Users
         private void UserHome_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void logOutBtn_Click_1(object sender, EventArgs e)
+        {
+            AuthService auth = new();
+            this.Dispose();
+            auth.Logout();
+            Login loginForm = new Login();
+            loginForm.Show();
+        }
+
+        private void salesListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SaleDetails.Clear();
+            saleDetailsListView.Clear();
+            if (salesListView.SelectedItems.Count <= 0)
+            {
+                SaleDetails.Clear();
+                RefreshSaleDetailsList();
+                txtValue.Text = @"0 $";
+                return;
+            }
+            // Obtiene el primer elemento seleccionado
+            var selectedItem = salesListView.SelectedItems[0];
+
+            // Obtiene el valor de la primera columna
+            var id = long.Parse(selectedItem.SubItems[0].Text);
+
+            // Ahora puedes usar el valor de la primera columna
+            var res = SaleService.GetInstance().GetById(id);
+            if (!res.IsSuccess) return;
+            var sale = res.Data;
+            foreach (var saleDetail in sale.SaleDetails) SaleDetails.Add(saleDetail);
+
+            LoadDataToSaleDetailsList();
+            txtValue.Text = SaleDetails.Sum(det => det.Subtotal).ToString("N0") + " $";
+
         }
     }
 }

@@ -71,8 +71,8 @@ namespace DAL.Repositories
             {
                 _dbConnection.OpenConnection();
                 var query =
-                    "SELECT s.Id, s.Discount, s.CreateAt, s.LocationsId, s.StatusId, l.Address, c.Id, c.Name, c.Description, sts.Id, sts.Name, sts.CreateAt," +
-                    "us.Id, us.IdentityCard, us.Names, us.Surnames, us.Phone, us.Email, us.CreateAt " +
+                    "SELECT s.Id, s.Discount, s.CreateAt, s.LocationsId, s.StatusId, l.Address, c.Id, c.Name, c.Description, sts.Id, sts.Name, sts.CreateAt, c.CreateAt, " +
+                    "us.Id, us.IdentityCard, us.Names, us.Surnames, us.Phone, us.Email, us.CreateAt, l.CreateAt " +
                     "FROM Sales s " +
                     "INNER JOIN SaleLocations l ON s.LocationsId = l.Id " +
                     "INNER JOIN Cities c ON l.CityId = c.Id " +
@@ -82,10 +82,14 @@ namespace DAL.Repositories
                 using (var command = new SqlCommand(query, _dbConnection.GetConnection()))
                 {
                     command.Parameters.AddWithValue("@Id", id);
-
+                    Sale sale;
                     using (var reader = command.ExecuteReader())
                     {
-                        if (reader.Read())
+                        if (!reader.Read())
+                        {
+                            return ResponseBuilder<Sale>.Fail("Venta no encontrada");
+                        }
+                        else
                         {
                             var city = new City(
                                 reader.GetInt64(6), // City Id
@@ -97,8 +101,8 @@ namespace DAL.Repositories
                             var saleLocation = new SaleLocation(
                                 reader.GetInt64(3), // SaleLocation Id
                                 reader.GetString(5), // Address
-                                city, // City
-                                reader.GetDateTime(2) // CreateAt
+                                city, //
+                                reader.GetDateTime(20) // CreateAt
                             );
 
                             var status = new SaleStatus(
@@ -107,35 +111,29 @@ namespace DAL.Repositories
                                 reader.GetDateTime(11) // SaleStatus CreateAt
                             );
                             var user = new User(
-                                reader.GetInt64(12), // Id
-                                reader.GetString(13), // IdentityCard
-                                reader.GetString(14), // Names
-                                reader.GetString(15), // Surnames
-                                reader.GetString(16), // Phone
-                                reader.GetString(17), // Email
-                                reader.GetDateTime(18) // CreateAt
+                                reader.GetInt64(13), // Id
+                                reader.GetString(14), // IdentityCard
+                                reader.GetString(15), // Names
+                                reader.GetString(16), // Surnames
+                                reader.GetString(17), // Phone
+                                reader.GetString(18), // Email
+                                reader.GetDateTime(19) // CreateAt
                             );
 
-                            // Get sale details
-                            var saleDetails = GetSaleDetailsBySaleId(id);
-
-                            var sale = new Sale(
+                            sale = new Sale(
                                 reader.GetInt64(0), // Sale Id
                                 reader.GetInt32(1), // Discount
                                 reader.GetDateTime(2), // CreateAt
                                 status, // SaleStatus
-                                saleDetails, // SaleDetails
+                                new HashSet<SaleDetail>(), // SaleDetails
                                 saleLocation, // SaleLocation
                                 user // User
                             );
 
-                            return new ResponseBuilder<Sale>().WithData(sale);
-                        }
-                        else
-                        {
-                            return ResponseBuilder<Sale>.Fail("Venta no encontrada");
                         }
                     }
+                    sale.SaleDetails = GetSaleDetailsBySaleId(sale.Id);
+                    return new ResponseBuilder<Sale>().WithData(sale).WithSuccess();
                 }
             }
             catch (SqlException ex)

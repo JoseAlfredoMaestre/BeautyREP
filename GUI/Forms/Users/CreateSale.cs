@@ -65,12 +65,14 @@ public partial class CreateSale : MaterialForm
     if (response.IsSuccess)
     {
         MessageBox.Show("Venta generada correctamente", "Venta generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        UserHome.GetInstance().SaleDetails.Clear();
+        UserHome.GetInstance().SaleTableEnabled();
+        UserHome.GetInstance().txtValue.Text = UserHome.GetInstance().SaleDetails.Sum(det => det.Subtotal).ToString("N0") + " $";;
         this.Dispose();
         SaleCreated?.Invoke();
     }
     else
     {
+        UserHome.GetInstance().txtValue.Text = UserHome.GetInstance().SaleDetails.Sum(det => det.Subtotal).ToString("N0");
         MessageBox.Show($"Error al generar la venta: {response.Msg}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
     }
 }

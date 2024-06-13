@@ -52,3 +52,12 @@ C:\Nathan\BEAUTY\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Nathan\BEAUTY\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Nathan\BEAUTY\DAL\obj\Debug\DAL.dll
 C:\Nathan\BEAUTY\DAL\obj\Debug\DAL.pdb
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\DAL\bin\Debug\DAL.dll
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\DAL\bin\Debug\DAL.pdb
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\DAL\bin\Debug\Entities.dll
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\DAL\bin\Debug\Entities.pdb
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\DAL\obj\Debug\DAL.dll
+C:\Users\JOSE MAESTRE\Desktop\Nuevo1\DAL\obj\Debug\DAL.pdb

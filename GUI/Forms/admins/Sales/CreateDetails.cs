@@ -30,7 +30,11 @@ public partial class CreateDetails : MaterialForm
 
         foreach (var product in products)
         {
-            productCombo.Items.Add(product.Name);
+            // Verifica si el producto ya está en la lista de detalles de venta
+            if (Home.GetInstance().SaleDetails.All(detail => detail.Product.Name != product.Name))
+            {
+                productCombo.Items.Add(product.Name);
+            }
         }
 
     }
@@ -77,17 +81,19 @@ public partial class CreateDetails : MaterialForm
                 else
                 {
                     // Solo guarda el usuario si todas las validaciones pasaron correctamente
-                    Home.GetInstance().SaleDetails.Add(saleDetail);
                     MessageBox.Show("Detalle de venta creado correctamente.");
+                    Home.GetInstance().SaleTableEnabled(false);
+                    Home.GetInstance().SaleDetails.Add(saleDetail);
+                    Home.GetInstance().txtValue.Text = Home.GetInstance().SaleDetails.Sum(det => det.Subtotal).ToString("N0") + " $";
                     this.Dispose();
                     SaleDetailsCreated?.Invoke();
                 }
             }
         }
 
-
     }
 
+    private Product selectedProduct;
     private void productCombo_SelectedIndexChanged(object sender, EventArgs e)
     {
 
@@ -99,7 +105,7 @@ public partial class CreateDetails : MaterialForm
 
 
             // Obtener el producto seleccionado
-            var selectedProduct = ProductService.GetInstance().GetAll().Data.FirstOrDefault(p => p.Name == productCombo.SelectedItem.ToString());
+            selectedProduct = ProductService.GetInstance().GetAll().Data.FirstOrDefault(p => p.Name == productCombo.SelectedItem.ToString());
 
             // Verificar si el producto tiene una imagen
             if (selectedProduct != null && selectedProduct.Image != null)
@@ -131,7 +137,6 @@ public partial class CreateDetails : MaterialForm
     if (productCombo.SelectedItem != null)
     {
         // Obtener el producto seleccionado
-        var selectedProduct = ProductService.GetInstance().GetAll().Data.FirstOrDefault(p => p.Name == productCombo.SelectedItem.ToString());
 
         // Verificar si se ingresó una cantidad válida
         if (int.TryParse(quantityInput.Text, out int quantity))
@@ -152,4 +157,9 @@ public partial class CreateDetails : MaterialForm
         subtotalLbl.Text = string.Empty;
     }
 }
+
+    private void subtotalLbl_Click(object sender, EventArgs e)
+    {
+        throw new System.NotImplementedException();
+    }
 }
