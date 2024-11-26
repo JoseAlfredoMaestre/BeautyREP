@@ -46,4 +46,4 @@ El módulo de Administrador proporciona acceso completo a todas las funcionalida
 ## Autores
 
 - Jose Alfredo Maestre  
-- Dahiana Torres 
+- Sara Belen Alarcon Rincones 
